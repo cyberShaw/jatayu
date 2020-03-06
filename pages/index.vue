@@ -13,7 +13,6 @@
       </card>
 
       <card title="Contribute" icon="file-video">
-<<<<<<< HEAD
         Upload footage to 
         <b class="has-text-grey">
           empower
@@ -25,13 +24,6 @@
           Real-time
         </b> 
         criminal tracking
-=======
-        Upload footage to empower
-      </card>
-
-      <card title="Track" icon="crosshairs-gps">
-        Real-time criminal tracking
->>>>>>> 754cc8bd5089365f9bdef449c556358e3849de83
       </card>
     </div>
     <footer class="footer">
