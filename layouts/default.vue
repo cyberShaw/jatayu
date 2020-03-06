@@ -7,7 +7,7 @@
     >
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
-          <img src="~assets/buefy.png" alt="Buefy" height="28" />
+          <p>Criminal Detecc</p>
         </a>
 
         <div class="navbar-burger">
@@ -50,9 +50,24 @@ export default {
           to: { name: 'index' }
         },
         {
-          title: 'Inspire',
-          icon: 'lightbulb',
-          to: { name: 'inspire' }
+          title: 'Search a Criminal',
+          icon: 'file-find',
+          to: { name: 'search' }
+        },
+        {
+          title: 'Recent Sightings',
+          icon: 'history',
+          to: { name: 'recent' }
+        },
+        {
+          title: 'Upload Footage',
+          icon: 'file-video',
+          to: { name: 'upload' }
+        },
+        {
+          title: 'Track',
+          icon: 'crosshairs-gps',
+          to: { name: 'track' }
         }
       ]
     }

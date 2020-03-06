@@ -1,35 +1,30 @@
 <template>
   <section class="section">
     <div class="columns is-mobile">
-      <card title="Free" icon="github-circle">
-        Open source on
-        <a href="https://github.com/buefy/buefy">
-          GitHub
-        </a>
+      <card title="Search" icon="file-find">
+        Search criminals from records
       </card>
 
-      <card title="Responsive" icon="cellphone-link">
+      <card title="Recent Sightings" icon="history">
         <b class="has-text-grey">
-          Every
+          Comprehensive
         </b>
-        component is responsive
+        tracking history
       </card>
 
-      <card title="Modern" icon="alert-decagram">
-        Built with
-        <a href="https://vuejs.org/">
-          Vue.js
-        </a>
-        and
-        <a href="http://bulma.io/">
-          Bulma
-        </a>
+      <card title="Contribute" icon="file-video">
+        Upload footage to empower
       </card>
 
-      <card title="Lightweight" icon="arrange-bring-to-front">
-        No other internal dependency
+      <card title="Track" icon="crosshairs-gps">
+        Real-time criminal tracking
       </card>
     </div>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        The web-app for SIH 2020. Made with ❤️ by Coders of Blaviken 🔥
+      </div>
+    </footer>
   </section>
 </template>
 
