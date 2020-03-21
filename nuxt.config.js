@@ -31,6 +31,9 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
+  script: [
+    "https://kit.fontawesome.com/145ca0f25f.js"
+  ],
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
   ],
@@ -44,10 +47,10 @@ export default {
     '@nuxtjs/axios'
   ],
 
-/*   buefy: {
-    materialDesignIcons: false,
-    defaultIconPack: 'fa'
-  }, */
+  buefy: {
+    defaultIconPack: 'mdi',
+    defaultContainerElement: '#content',
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

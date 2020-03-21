@@ -9,8 +9,8 @@
       </h2>
       <div class="buttons">
         <nuxt-link to='/login'>
-          <b-button type="is-light is-rounded is-danger is-medium">
-            Log In &rarr;
+          <b-button icon-left="lock-open-outline" type="is-light is-rounded is-danger is-medium">
+            Log In
           </b-button>
         </nuxt-link>
       </div>
