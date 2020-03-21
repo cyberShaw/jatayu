@@ -1,47 +1,35 @@
 <template>
-  <section class="section">
-    <div class="columns is-mobile">
-      <card title="Search" icon="file-find">
-        Search criminals from records
-      </card>
-
-      <card title="Recent Sightings" icon="history">
-        <b class="has-text-grey">
-          Comprehensive
-        </b>
-        tracking history
-      </card>
-
-      <card title="Contribute" icon="file-video">
-        Upload footage to 
-        <b class="has-text-grey">
-          empower
-        </b>
-      </card>
-
-      <card title="Track" icon="crosshairs-gps">
-        <b class="has-text-grey">
-          Real-time
-        </b> 
-        criminal tracking
-      </card>
-    </div>
-    <footer class="footer">
-      <div class="content has-text-centered">
-        The web-app for SIH 2020. Made with ❤️ by Coders of Blaviken 🔥
+  <div class="hero is-dark is-fullheight">
+    <div class="hero-body">
+      <h1 class="title is-1 has-text-centered">
+        The Wire
+      </h1>
+      <h2 class="subtitle has-text-centered is-hidden-mobile">
+        A State-of-the-Art Criminal Detection System.
+      </h2>
+      <div class="buttons">
+        <nuxt-link to='/login'>
+          <b-button type="is-light is-rounded is-danger is-medium">
+            Log In &rarr;
+          </b-button>
+        </nuxt-link>
       </div>
-    </footer>
-  </section>
+    </div>
+  </div>
 </template>
 
 <script>
-import Card from '~/components/Card'
-
 export default {
-  name: 'HomePage',
-
-  components: {
-    Card
-  }
+  name: 'index',
 }
 </script>
+
+<style scoped>
+  .hero-body {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .buttons {
+    padding: 0.5rem 0;
+  }
+</style>
