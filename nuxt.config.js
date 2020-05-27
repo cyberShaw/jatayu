@@ -19,8 +19,6 @@ export default {
       { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@600&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap' },
-      { rel: 'stylesheet', href: '~/assets/css/meanmenu.css', media: 'all' }
-    ]
   },
 
   router: {
