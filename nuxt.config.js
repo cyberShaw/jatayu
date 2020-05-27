@@ -21,6 +21,10 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&family=Inter:wght@700&display=swap' }
     ]
   },
+
+  router: {
+    base: '/sih2020-frontend'
+  },
   /*
    ** Customize the progress-bar color
    */

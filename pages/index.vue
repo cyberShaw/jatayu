@@ -6,12 +6,12 @@
                         <div class="col-sm-3 col-6 col-lg-2 col-xl-2 order-lg-1">
                         <!-- Brand Logo -->
                             <div class="brand-logo">
-                                <a href=""><img src="../static/image/main-logo.png" alt="" /></a>
+                                <!-- <a href=""><img src="../static/image/main-logo.png" alt="" /></a> -->
                             </div>
                         </div>
                         <div class="col-sm-8 col-lg-2 col-xl-2 d-none d-sm-block order-lg-3">
                             <div class="header-btns justify-content-end">
-                                <a href="#" class="btn btn-link">Login</a>
+                                <a href="#" class="btn btn-link">Sign In</a>
                             </div>
                         </div>
                         <!-- Menu Block -->
@@ -91,15 +91,15 @@
             <div class="fact-absolute">
                 <div class="row justify-content-center">
                     <div class="col-xl-7 col-lg-8 mb--35  text-center">
-                        <span class="fact-text">The #1 User Experience Design course in the market</span>
+                        <span class="fact-text">CCTV Cameras are everywhere. Harnessing them for a <br />Safe India.</span>
                     </div>
                     </div>
                     <div class="row justify-content-center space-db--30">
                         <div class="col-md-6 col-lg-3 mb--30" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
                                 <div class="fact-card" >
                                 <div class="card-content">
-                                    <span class="number">12,382</span>
-                                    <p class="info">Happy Students</p>
+                                    <span class="number">500k</span>
+                                    <p class="info">CCTV Cameras</p>
                                 </div>
                         
                                 <div class="card-icon">
@@ -111,8 +111,8 @@
                         <div class="col-md-6 col-lg-3 mb--30" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" data-aos-delay="200">
                                 <div class="fact-card" >
                                 <div class="card-content">
-                                    <span class="number">103</span>
-                                    <p class="info">Lectures</p>
+                                    <span class="number">24 x 7</span>
+                                    <p class="info">Surveillance</p>
                                 </div>
                         
                                 <div class="card-icon">
@@ -124,8 +124,8 @@
                         <div class="col-md-6 col-lg-3 mb--30" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" data-aos-delay="400">
                                 <div class="fact-card" >
                                 <div class="card-content">
-                                    <span class="number">3,493</span>
-                                    <p class="info">5 Star Reviews</p>
+                                    <span class="number">30-90</span>
+                                    <p class="info">Days of Footage</p>
                                 </div>
                         
                                 <div class="card-icon">
@@ -137,8 +137,8 @@
                         <div class="col-md-6 col-lg-3 mb--30" data-aos="fade-up" data-aos-duration="2000" data-aos-once="true" data-aos-delay="600">
                                 <div class="fact-card" >
                                 <div class="card-content">
-                                    <span class="number">21k</span>
-                                    <p class="info">Questions Solved</p>
+                                    <span class="number">∞</span>
+                                    <p class="info">Amount of Data</p>
                                 </div>
                         
                                 <div class="card-icon">
@@ -190,10 +190,10 @@
                         </div>
                         <div class="col-xl-4 col-lg-5 offset-xl-2">
                             <div class="acc-right-content d-flex">
-                            <div class="course-length-badge">
+                            <!-- <div class="course-length-badge">
                                 <span>6 Video Classes</span>
                                 <span>3.4hrs</span>
-                            </div>
+                            </div> -->
                             <button class="btn acc-toggle" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                 <i class="icon icon-minimal-down"></i>
                             </button>
@@ -205,11 +205,11 @@
                 
                 <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
                     <div class="card-body">
-                        <ul class="course-inline-list">
+                        <!-- <ul class="course-inline-list">
                             <li><a href=""><i class="icon icon-check-2"></i>Persona Creation</a></li>
                             <li><a href=""><i class="icon icon-check-2"></i>Why Persona is Important</a></li>
                             <li><a href=""><i class="icon icon-check-2"></i>Data-Driven Personas</a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                 </div>
                 </div>
@@ -229,10 +229,10 @@
                     </div>
                     <div class="col-lg-4 offset-lg-2">
                         <div class="acc-right-content d-flex">
-                            <div class="course-length-badge">
+                            <!-- <div class="course-length-badge">
                                 <span>6 Video Classes</span>
                                 <span>3.4hrs</span>
-                            </div>
+                            </div> -->
                             <button class="btn acc-toggle collapsed" type="button" data-toggle="collapse" data-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
                                 <i class="icon icon-minimal-down"></i>
                             </button>
@@ -244,11 +244,11 @@
                 
                     <div id="collapse2" class="collapse" aria-labelledby="heading2" data-parent="#accordionExample">
                     <div class="card-body">
-                        <ul class="course-inline-list">
+                        <!-- <ul class="course-inline-list">
                             <li><a href=""><i class="icon icon-check-2"></i>Persona Creation</a></li>
                             <li><a href=""><i class="icon icon-check-2"></i>Why Persona is Important</a></li>
                             <li><a href=""><i class="icon icon-check-2"></i>Data-Driven Personas</a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                     </div>
                 </div>
@@ -268,10 +268,10 @@
                         </div>
                         <div class="col-lg-4 offset-lg-2">
                             <div class="acc-right-content d-flex">
-                            <div class="course-length-badge">
+                            <!-- <div class="course-length-badge">
                                 <span>6 Video Classes</span>
                                 <span>3.4hrs</span>
-                            </div>
+                            </div> -->
                             <button class="btn acc-toggle collapsed" type="button" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
                                 <i class="icon icon-minimal-down"></i>
                             </button>
@@ -283,11 +283,11 @@
                 
                     <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionExample">
                     <div class="card-body">
-                        <ul class="course-inline-list">
+                        <!-- <ul class="course-inline-list">
                             <li><a href=""><i class="icon icon-check-2"></i>Persona Creation</a></li>
                             <li><a href=""><i class="icon icon-check-2"></i>Why Persona is Important</a></li>
                             <li><a href=""><i class="icon icon-check-2"></i>Data-Driven Personas</a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                     </div>
                 </div>
@@ -307,10 +307,10 @@
                         </div>
                         <div class="col-lg-4 offset-lg-2">
                             <div class="acc-right-content d-flex">
-                            <div class="course-length-badge">
+                            <!-- <div class="course-length-badge">
                                 <span>6 Video Classes</span>
                                 <span>3.4hrs</span>
-                            </div>
+                            </div> -->
                             <button class="btn acc-toggle collapsed" type="button" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse4">
                                 <i class="icon icon-minimal-down"></i>
                             </button>
@@ -425,9 +425,9 @@
                 <div class="row justify-content-center">
                     <div class="col-md-9 col-lg-8 col-xl-7" data-aos="flip-down" data-aos-delay="55" data-aos-duration="2000" data-aos-once="true">
                         <div class="footer-content">
-                            <span class="title-small-text">Time to take action</span>
-                            <h2>Ready to learn UX Design from the expert?</h2>
-                            <div class="footer-btn"><a href="" class="btn btn--orange btn--hover-shine">Get Started</a></div>
+                            <span class="title-small-text">let's dive right in</span>
+                            <h2>Ready to catch some bad guys?</h2>
+                            <div class="footer-btn"><a href="" class="btn btn--orange btn--hover-shine">Sign In 🔑</a></div>
                         </div>
                     </div>
                     </div>
@@ -440,8 +440,8 @@
                                 <ul class="footer-list">
                                     <li><a href="">About</a></li>
                                     <li><a href="">Features</a></li>
-                                    <li><a href="">Works</a></li>
-                                    <li><a href="">Career</a></li>
+                                    <!-- <li><a href=""></a></li>
+                                    <li><a href=""></a></li> -->
                                 </ul>
                             </div>
 
@@ -449,8 +449,8 @@
                                 <ul class="footer-list">
                                     <li><a href="">Contact</a></li>
                                     <li><a href="">Help &amp; Support</a></li>
-                                    <li><a href="">Privacy Policy</a></li>
-                                    <li><a href="">Terms &amp; Conditions</a></li>
+                                    <!-- <li><a href="">Privacy Policy</a></li>
+                                    <li><a href="">Terms &amp; Conditions</a></li> -->
                                 </ul>
                             </div>
                         </div>
@@ -458,16 +458,15 @@
                     <div class="col-lg-3 col-xl-3 col-sm-6 col-margin">
                         <span class="ft-title-sm">Product</span>
                         <ul class="footer-list">
-                            <li><a href="">Essential Landing Page</a></li>
-                            <li><a href="">Alpha Dashboard Pro</a></li>
-                            <li><a href="">Karnel Admin Dashboard</a></li>
-                            <li><a href="">Gray UI Kit</a></li>
+                            <li><a href="">Home</a></li>
+                            <li><a href="">Dashboard</a></li>
+                            <!-- <li><a href="">Karnel Admin Dashboard</a></li>
+                            <li><a href="">Gray UI Kit</a></li> -->
                         </ul>
                     </div>
                     <div class="col-lg-5 col-xl-5 col-margin">
                         <div class="ft-newsletter-box">
-                            <span class="ft-title-sm">Subscribe to our newsletter</span>
-                            <p>Subscribe to get lastest offers, news and events announcements. No spam in your inbox.</p>
+                            <p>Say hello, email us</p>
                             <form action="">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Enter your email address">
