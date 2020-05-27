@@ -14,7 +14,7 @@
                         </div>
                     </div>
                     <!-- Menu Block -->
-                    <div class="col-sm-1 col-6 col-lg-6 col-xl-6 offset-lg-2  position-static order-lg-2">
+                    <div class="col-sm-1 col-6 col-lg-6 col-xl-6 offset-lg-2 position-static order-lg-2">
                         <div class="main-navigation">
                             <ul class="main-menu">
                                 <li class="menu-item has-dropdown">

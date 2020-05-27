@@ -18,7 +18,7 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=IBM+Plex+Sans&family=Inter:wght@700&display=swap' }
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@600&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap' }
     ]
   },
 
@@ -36,8 +36,9 @@ export default {
     // '~/assets/css/custom.css',
     '~/assets/css/settings.css',
     '~/assets/css/style.css',
-    '~/assets/css/meanmenu.css',
     '~/assets/css/slick.css',
+    '~/assets/css/user.css',
+    '~/assets/css/meanmenu.css',
     // '~/assets/css/aos.css'
   ],
   /*

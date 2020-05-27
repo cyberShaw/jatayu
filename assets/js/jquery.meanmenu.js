@@ -24,7 +24,7 @@
  * Find more information at http://www.meanthemes.com/plugins/meanmenu/
  *
  */
-(function ($) {
+(function($) {
 	"use strict";
     $.fn.meanmenu = function (options) {
         var defaults = {
