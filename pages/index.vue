@@ -429,11 +429,13 @@
                         <div class="footer-content">
                             <span class="title-small-text">let's dive right in</span>
                             <h2>Ready to catch some bad guys?</h2>
-                            <div class="footer-btn"><a href="" class="btn btn--orange btn--hover-shine">Sign In 🔑</a></div>
+                            <div class="footer-btn">
+                                <a href="" class="btn btn--orange btn--hover-shine">Sign In 🔑</a>
+                            </div>
                         </div>
                     </div>
-                    </div>
-                    <span class="section-devider mt--130"></span>
+                </div>
+                <span class="section-devider mt--130"></span>
                 <div class="row mt--70">
                     <div class="col-lg-4 col-xl-4 col-sm-6 col-margin">
                         <span class="ft-title-sm">Help menu</span>
@@ -470,14 +472,14 @@
                         <div class="ft-newsletter-box">
                             <p>Say hello, email us</p>
                             <form action="">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Enter your email address">
-                                <button class="submit-btn"><i class="icon icon-tail-right"></i></button>
-                            </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Enter your email address">
+                                    <button class="submit-btn"><i class="icon icon-tail-right"></i></button>
+                                </div>
                             </form>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
             <div class="shape-holder footer-shape-1" data-aos="zoom-in-left" data-aos-once="true"><img src="../static/image/cta-shape.svg" alt=""></div>
             <div class="shape-holder footer-shape-2" data-aos="zoom-in-right" data-aos-once="true"><img src="../static/image/footer-shape.svg" alt=""></div>
