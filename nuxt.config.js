@@ -23,7 +23,11 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    '~/assets/css/custom.css',
+    '~/assets/css/settings.css',
+    '~/assets/css/style.css'
+  ],
   /*
    ** Plugins to load before mounting the App
    */
@@ -32,7 +36,9 @@ export default {
    ** Nuxt.js dev-modules
    */
   script: [
-    "https://kit.fontawesome.com/145ca0f25f.js"
+    {src: 'https://kit.fontawesome.com/145ca0f25f.js'},
+    {src: '~/assets/js/active.js'},
+    {src: '~/assets/js/jquery.meanmenu.js'}
   ],
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
