@@ -22507,7 +22507,7 @@
   height: 100%;
   width: 123%;
   z-index: -1;
-  background-image: url(../image/aurthor-bg-shape.png);
+  /* background-image: url(../image/aurthor-bg-shape.png); */
   background-repeat: no-repeat;
   background-size: 100%;
 }
