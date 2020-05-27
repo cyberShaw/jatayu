@@ -43,7 +43,9 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '@/plugins/aos.js'
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -57,7 +59,6 @@ export default {
     { src: '~/assets/js/jquery.meanmenu.js' }
   ],
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
   ],
   /*
    ** Nuxt.js modules
@@ -67,11 +68,6 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios'
   ],
-
-  // buefy: {
-  //   defaultIconPack: 'mdi',
-  //   defaultContainerElement: '#content',
-  // },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
