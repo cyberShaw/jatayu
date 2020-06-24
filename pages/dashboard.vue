@@ -1,15 +1,10 @@
 <template>
-    <section class="hero">
-        Lol
-    </section>
+    
 </template>
 
 <script>
-    export default {
 
-    }
+export default {
+    layout: 'dash'
+}
 </script>
-
-<style>
-
-</style>
