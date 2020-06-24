@@ -8,7 +8,14 @@
                             <!-- <a href=""><img src="../static/image/main-logo.png" alt="" /></a> -->
                         </div>
                     </div>
-                    <div class="col-sm-8 col-lg-2 col-xl-2 d-none d-sm-block order-lg-3">
+                    <div v-if="$auth.loggedIn" class="col-sm-8 col-lg-2 col-xl-2 d-none d-sm-block order-lg-3">
+                        <div class="header-btns justify-content-end">
+                            {{ $auth.user.email }}
+                            <nuxt-link to="/dashboard" class="btn btn-link">Dashboard</nuxt-link>
+                            <nuxt-link to="/login" class="btn btn-link">Log Out</nuxt-link>
+                        </div>
+                    </div>
+                    <div v-else class="col-sm-8 col-lg-2 col-xl-2 d-none d-sm-block order-lg-3">
                         <div class="header-btns justify-content-end">
                             <nuxt-link to="/login" class="btn btn-link">Sign In</nuxt-link>
                         </div>

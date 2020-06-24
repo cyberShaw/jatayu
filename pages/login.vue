@@ -14,7 +14,7 @@
                         <div class="container is-vcentered">
                             <div class="field">
                                 <p class="control has-icons-left has-icons-right">
-                                    <input class="input is-medium" type="email" placeholder="Enter your email ID 😄">
+                                    <input class="input is-medium" v-model="email" type="email" placeholder="Enter your email ID 😄">
                                     <span class="icon is-small is-left">
                                         <i class="fas fa-envelope"></i>
                                     </span>
@@ -22,7 +22,7 @@
                             </div>
                             <div class="field">
                                 <p class="control has-icons-left">
-                                    <input class="input is-medium" type="password" placeholder="Your super secret password 🔐">
+                                    <input class="input is-medium" v-model="password" type="password" placeholder="Your super secret password 🔐">
                                     <span class="icon is-medium is-left">
                                         <i class="fas fa-lock"></i>
                                     </span>
@@ -30,8 +30,8 @@
                             </div>
                             <div class="field">
                                 <p class="control">
-                                    <button class="submit is-block is-medium is-fullwidth button is-success">
-                                    Login
+                                    <button class="is-block is-medium is-fullwidth button is-success" v-on:click="loginUser">
+                                        Login
                                     </button>
                                 </p>
                             </div>
@@ -45,7 +45,23 @@
 
 <script>
     export default {
+        data() {
+            return {
+                email: 'saibalsu@gmail.com',
+                password: 'lollollol'     
+            }
+        },
 
+        methods: {
+            loginUser() {
+                this.$auth.loginWith('local', {
+                    data: {
+                        email: this.email,
+                        password: this.password
+                    }
+                })
+            }
+        }
     }
 </script>
 

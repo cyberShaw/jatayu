@@ -23,7 +23,7 @@ export default {
   },
 
   router: {
-    base: '/sih2020-frontend'
+    base: '/sih2020-frontend/'
   },
   /*
    ** Customize the progress-bar color
@@ -64,10 +64,25 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://buefy.github.io/#/documentation
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/login', method: 'post', propertyName: 'token' },
+          logout: { url: '/api/auth/logout', method: 'post' },
+          user: { url: '/api/user', method: 'get', propertyName: 'user' }
+        },
+        // tokenRequired: true,
+        tokenType: '',
+        // globalToken: true,
+        // autoFetchUser: true
+      }
+    }
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

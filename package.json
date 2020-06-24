@@ -13,7 +13,8 @@
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
-    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.11.0",
     "aos": "^2.3.4",
     "bootstrap-vue": "^2.15.0",
     "bulma": "^0.9.0",
