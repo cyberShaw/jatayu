@@ -10,7 +10,7 @@
                     </div>
                     <div class="col-sm-8 col-lg-2 col-xl-2 d-none d-sm-block order-lg-3">
                         <div class="header-btns justify-content-end">
-                            <a href="#" class="btn btn-link">Sign In</a>
+                            <nuxt-link to="/login" class="btn btn-link">Sign In</nuxt-link>
                         </div>
                     </div>
                     <!-- Menu Block -->
@@ -430,7 +430,7 @@
                             <span class="title-small-text">let's dive right in</span>
                             <h2>Ready to catch some bad guys?</h2>
                             <div class="footer-btn">
-                                <a href="" class="btn btn--orange btn--hover-shine">Sign In 🔑</a>
+                                <nuxt-link to="/login" class="btn btn--orange btn--hover-shine">Sign In 🔑</nuxt-link>
                             </div>
                         </div>
                     </div>
