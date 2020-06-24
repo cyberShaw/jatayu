@@ -1,6 +1,5 @@
 <template>
   <div>
-    <title-bar :title-stack="titleStack" />
     <hero-bar>
       {{ heroTitle }}
       <router-link slot="right" :to="heroRouterLinkTo" class="button">
@@ -84,7 +83,6 @@
 import axios from 'axios'
 import dayjs from 'dayjs'
 import find from 'lodash/find'
-import TitleBar from '@/components/TitleBar'
 import HeroBar from '@/components/HeroBar'
 import Tiles from '@/components/Tiles'
 import CardComponent from '@/components/CardComponent'
@@ -94,7 +92,7 @@ import Notification from '@/components/Notification'
 
 export default {
   name: 'ClientForm',
-  components: { UserAvatar, FilePicker, CardComponent, Tiles, HeroBar, TitleBar, Notification },
+  components: { UserAvatar, FilePicker, CardComponent, Tiles, HeroBar, Notification },
   data () {
     return {
       id: null,

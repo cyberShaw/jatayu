@@ -2,8 +2,8 @@
     <div id="app">
         <nav-bar />
         <aside-menu :menu="menu" @menu-click="menuClick" />
+        <br/>
         <nuxt />
-        <footer-bar />
     </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
     computed: {
         menu() {
             return [
-                'General',
+                'Dashboard',
                 [
                     {
                         to: '/',
@@ -31,13 +31,8 @@ export default {
                         label: 'Dashboard'
                     }
                 ],
-                'Examples',
+                'Features',
                 [
-                    {
-                        action: 'dark-mode-toggle',
-                        label: 'Dark / White',
-                        icon: 'weather-night'
-                    },
                     {
                         to: '/tables',
                         label: 'Tables',
@@ -50,40 +45,52 @@ export default {
                         icon: 'square-edit-outline'
                     },
                     {
-                        to: '/profile',
-                        label: 'Profile',
+                        to: '/search',
+                        label: 'Search a Criminal',
                         icon: 'account-circle'
                     },
                     {
-                        label: 'Submenus',
-                        subLabel: 'Submenus Example',
-                        icon: 'view-list',
-                        menu: [
-                            {
-                                href: '#void',
-                                label: 'Sub-item One'
-                            },
-                            {
-                                href: '#void',
-                                label: 'Sub-item Two'
-                            }
-                        ]
+                        to: '/recent',
+                        label: 'Recent Sightings',
+                        icon: 'account-circle'
+                    },
+                    {
+                        to: '/track',
+                        label: 'Tracking',
+                        icon: 'account-circle'
+                    },
+                    {
+                        to: '/upload',
+                        label: 'Upload Footage',
+                        icon: 'account-circle'
+                    }
+                ],
+                'Profile',
+                [
+                    {
+                        to: '/profile',
+                        label: 'View Profile',
+                        icon: 'account-circle'
+                    },
+                    {
+                        to: '#',
+                        label: 'Logout',
+                        icon: 'logout'
                     }
                 ],
                 'About',
                 [
                     {
-                        href: 'https://admin-null-nuxt.justboil.me',
-                        label: 'Premium Demo',
+                        href: 'https://github.com/cyberShaw',
+                        label: 'View the Source',
                         icon: 'credit-card'
                     },
                     {
-                        href:
-                            'https://justboil.me/bulma-admin-template/null-nuxt',
+                        to: '/about',
                         label: 'About',
                         icon: 'help-circle'
                     }
-                ]
+                ],
             ]
         }
     },

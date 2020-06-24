@@ -1,6 +1,5 @@
 <template>
     <div>
-        <title-bar :title-stack="titleStack" />
         <hero-bar>
             Tables
             <router-link slot="right" to="/" class="button">
@@ -68,13 +67,11 @@
 import Notification from '@/components/Notification'
 import ClientsTableSample from '@/components/ClientsTableSample'
 import CardComponent from '@/components/CardComponent'
-import TitleBar from '@/components/TitleBar'
 import HeroBar from '@/components/HeroBar'
 export default {
     name: 'Tables',
     components: {
         HeroBar,
-        TitleBar,
         CardComponent,
         ClientsTableSample,
         Notification

@@ -5,7 +5,8 @@
   >
     <aside-tools :is-main-menu="true">
       <span slot="label">
-        <b>Admin</b> Null Nuxt.js
+        <b>Samaritan</b> --
+        Criminal Tagging
       </span>
     </aside-tools>
     <div class="menu is-menu-main">

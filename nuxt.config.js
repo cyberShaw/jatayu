@@ -19,11 +19,13 @@ export default {
       { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@600&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Nunito' },
+      { rel: 'stylesheet', type: 'text/css', href: 'https://cdn.materialdesignicons.com/4.9.95/css/materialdesignicons.min.css' }
     ]
   },
 
   router: {
-    base: '/sih2020-frontend/'
+    baseURL: '/'
   },
   /*
    ** Customize the progress-bar color
@@ -39,13 +41,14 @@ export default {
     '~/assets/css/style.css',
     '~/assets/css/slick.css',
     '~/assets/css/user.css',
-    // '~/assets/css/main.scss',
+    '~/assets/scss/main.scss',
   ],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '@/plugins/aos.js'
+    '@/plugins/aos.js',
+    { src: '~/plugins/after-each.js', mode: 'client' }
   ],
   /*
    ** Nuxt.js dev-modules
@@ -65,7 +68,8 @@ export default {
    */
   modules: [
     '@nuxtjs/axios',
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    ['nuxt-buefy', { materialDesignIcons: false }],
   ],
 
   auth: {

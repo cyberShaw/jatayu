@@ -1,6 +1,5 @@
 <template>
     <div>
-        <title-bar :title-stack="titleStack" />
         <hero-bar>
             Profile
             <router-link slot="right" to="/" class="button">
@@ -44,7 +43,6 @@
 <script>
 import { mapState } from 'vuex'
 import CardComponent from '@/components/CardComponent'
-import TitleBar from '@/components/TitleBar'
 import HeroBar from '@/components/HeroBar'
 import ProfileUpdateForm from '@/components/ProfileUpdateForm'
 import PasswordUpdateForm from '@/components/PasswordUpdateForm'
@@ -58,7 +56,6 @@ export default {
         PasswordUpdateForm,
         ProfileUpdateForm,
         HeroBar,
-        TitleBar,
         CardComponent
     },
     computed: {
