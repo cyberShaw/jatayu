@@ -8,6 +8,8 @@
     />
     <map-modal
     :is-active="isMapModalActive"
+    :lat="37.7397"
+    :long="-121.4252"
     @close="mapClose"
     />
     <b-table
@@ -101,7 +103,8 @@ export default {
       isLoading: false,
       paginated: false,
       perPage: 10,
-      checkedRows: []
+      checkedRows: [],
+      coord: []
     }
   },
   computed: {
@@ -128,6 +131,9 @@ export default {
               this.paginated = true
             }
             this.clients = r.data.detections
+            // for (i = 0; i < r.data.detections.length; i++) {
+            //   temp = r.data.detections.location.replace	(%B0\ NE, '').split(',')
+            // }
             // console.log(this.clients)
           }
         })

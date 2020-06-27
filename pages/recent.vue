@@ -26,7 +26,7 @@
         </notification>
 
         <card-component class="has-table has-mobile-sort-spaced">
-            <detections-table
+            <DetectionsTable
                 :data-url="
                     `${this.$axios.defaults.baseURL}detections/`
                 "
@@ -52,7 +52,6 @@ import DetectionsTable from '@/components/DetectionsTable'
 import CardComponent from '@/components/CardComponent'
 import HeroBar from '@/components/HeroBar'
 export default {
-    name: 'Tables',
     components: {
         HeroBar,
         CardComponent,

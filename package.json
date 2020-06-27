@@ -29,6 +29,7 @@
     "numeral": "^2.0.6",
     "nuxt": "^2.0.0",
     "nuxt-buefy": "^0.3.31",
+    "nuxt-gmaps": "^1.2.4",
     "sass-loader": "^8.0.2",
     "vue-chartjs": "^3.5.0",
     "vue-lottie": "^0.2.1"
