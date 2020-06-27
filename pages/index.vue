@@ -69,11 +69,11 @@ import Tiles from '@/components/Tiles'
 import CardWidget from '@/components/CardWidget'
 import CardComponent from '@/components/CardComponent'
 import LineChart from '@/components/Charts/LineChart'
-import ClientsTableSample from '@/components/ClientsTableSample'
+// import ClientsTableSample from '@/components/ClientsTableSample'
 export default {
     name: 'Home',
     components: {
-        ClientsTableSample,
+        // ClientsTableSample,
         LineChart,
         CardComponent,
         CardWidget,

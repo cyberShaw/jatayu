@@ -6,6 +6,10 @@
       @confirm="trashConfirm"
       @cancel="trashCancel"
     />
+    <map-modal
+    :is-active="isMapModalActive"
+    @close="mapClose"
+    />
     <b-table
       :checked-rows.sync="checkedRows"
       :checkable="checkable"
@@ -23,19 +27,17 @@
             <img :src="props.row.avatar" class="is-rounded">
           </div>
         </b-table-column>
-        <b-table-column label="Name" field="name" sortable>
-          {{ props.row.name }}
+        <b-table-column label="Criminal ID" field="cid" sortable>
+          {{ props.row.cid }}
         </b-table-column>
-        <b-table-column label="Company" field="company" sortable>
-          {{ props.row.company }}
+        <b-table-column label="ID" field="id" sortable>
+          {{ props.row.id }}
         </b-table-column>
-        <b-table-column label="City" field="city" sortable>
-          {{ props.row.city }}
+        <b-table-column label="Location - Coordinates" field="location" sortable>
+          <div class="modalToggle" @click.prevent="mapOpen()"> {{ props.row.location }} </div>
         </b-table-column>
-        <b-table-column class="is-progress-col" label="Progress" field="progress" sortable>
-          <progress class="progress is-small is-primary" :value="props.row.progress" max="100">
-            {{ props.row.progress }}
-          </progress>
+        <b-table-column class="image is-square" label="Progress" field="progress" sortable>
+            <img class="zoom" :src="props.row.rsrc" />
         </b-table-column>
         <b-table-column label="Created">
           <small class="has-text-grey is-abbr-like" :title="props.row.created">{{ props.row.created }}</small>
@@ -75,14 +77,15 @@
 <script>
 import axios from 'axios'
 import ModalBox from '@/components/ModalBox'
+import MapModal from '@/components/MapModal'
 
 export default {
-  name: 'ClientsTableSample',
-  components: { ModalBox },
+  name: 'DetectionsTable',
+  components: { ModalBox, MapModal },
   props: {
     dataUrl: {
       type: String,
-      default: null
+      default: false 
     },
     checkable: {
       type: Boolean,
@@ -92,6 +95,7 @@ export default {
   data () {
     return {
       isModalActive: false,
+      isMapModalActive: false,
       trashObject: null,
       clients: [],
       isLoading: false,
@@ -110,17 +114,21 @@ export default {
     }
   },
   mounted () {
+    console.log(this.dataUrl)
     if (this.dataUrl) {
+      console.log(this.dataUrl)
       this.isLoading = true
-      axios
+      this.$axios
         .get(this.dataUrl)
         .then((r) => {
+          // console.log(r.data.detections)
           this.isLoading = false
-          if (r.data && r.data.data) {
-            if (r.data.data.length > this.perPage) {
+          if (r.data && r.data.detections) {
+            if (r.data.detections.length > this.perPage) {
               this.paginated = true
             }
-            this.clients = r.data.data
+            this.clients = r.data.detections
+            // console.log(this.clients)
           }
         })
         .catch((e) => {
@@ -137,6 +145,9 @@ export default {
       this.trashObject = trashObject
       this.isModalActive = true
     },
+    mapOpen () {
+      this.isMapModalActive = true
+    },
     trashConfirm () {
       this.isModalActive = false
       this.$buefy.snackbar.open({
@@ -146,6 +157,9 @@ export default {
     },
     trashCancel () {
       this.isModalActive = false
+    },
+    mapClose () {
+      this.isMapModalActive = false
     }
   }
 }

@@ -25,7 +25,7 @@ export default {
   },
 
   router: {
-    baseURL: '/'
+    base: '/'
   },
   /*
    ** Customize the progress-bar color
@@ -48,6 +48,7 @@ export default {
    */
   plugins: [
     '@/plugins/aos.js',
+    '@/plugins/medium-zoom.js',
     { src: '~/plugins/after-each.js', mode: 'client' }
   ],
   /*
@@ -91,7 +92,9 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    baseURL: 'https://coders-of-blaviken-api.herokuapp.com/api/'
+  },
   /*
    ** Build configuration
    */

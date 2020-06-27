@@ -20,7 +20,7 @@
                 title="Clients"
                 icon="account-multiple"
             >
-                <clients-table-sample
+                <detections-table
                     :data-url="
                         `${$router.options.base}data-sources/clients.json`
                     "
@@ -39,7 +39,7 @@
             </notification>
 
             <card-component class="has-table has-mobile-sort-spaced">
-                <clients-table-sample
+                <detections-table
                     :data-url="
                         `${$router.options.base}data-sources/clients.json`
                     "
@@ -57,7 +57,7 @@
             </notification>
 
             <card-component class="has-table">
-                <clients-table-sample />
+                <detections-table />
             </card-component>
         </section>
     </div>
@@ -65,7 +65,7 @@
 
 <script>
 import Notification from '@/components/Notification'
-import ClientsTableSample from '@/components/ClientsTableSample'
+import DetectionsTable from '@/components/DetectionsTable'
 import CardComponent from '@/components/CardComponent'
 import HeroBar from '@/components/HeroBar'
 export default {
@@ -73,7 +73,7 @@ export default {
     components: {
         HeroBar,
         CardComponent,
-        ClientsTableSample,
+        DetectionsTable,
         Notification
     },
     computed: {
