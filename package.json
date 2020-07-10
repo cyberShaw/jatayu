@@ -25,6 +25,7 @@
     "dayjs": "^1.8.28",
     "lodash": "^4.17.15",
     "medium-zoom": "^1.0.5",
+    "minimist": "^1.2.5",
     "node-sass": "^4.14.1",
     "numeral": "^2.0.6",
     "nuxt": "^2.0.0",
