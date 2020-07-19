@@ -1,3 +1,4 @@
+<!--
 <template>
     <div>
         <hero-bar>
@@ -88,3 +89,4 @@ export default {
     }
 }
 </script>
+-->

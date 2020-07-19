@@ -1,3 +1,4 @@
+<!--
 <template>
     <div>
         <hero-bar :has-right-visible="false">
@@ -56,7 +57,7 @@
                         `${$router.options.base}data-sources/clients.json`
                     "
                 />
-            </card-component> -->
+            </card-component>
         </section>
     </div>
 </template>
@@ -177,3 +178,4 @@ export default {
     }
 }
 </script>
+-->

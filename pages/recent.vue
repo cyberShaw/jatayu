@@ -1,3 +1,4 @@
+<!--
 <template>
   <div>
     <hero-bar>
@@ -41,7 +42,7 @@
                 <b-icon icon="buffer" custom-size="default" />
                 <b>Empty table.</b> When there's nothing to show
             </div>
-        </notification> -->
+        </notification>
     </section>    
   </div>
 </template>
@@ -74,3 +75,4 @@ export default {
 <style>
 
 </style>
+-->

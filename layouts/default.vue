@@ -1,8 +1,8 @@
 <template>
     <div id="app">
-        <nav-bar />
+        <!-- <nav-bar />
         <aside-menu :menu="menu" @menu-click="menuClick" />
-        <br/>
+        <br/> -->
         <nuxt />
     </div>
 </template>
