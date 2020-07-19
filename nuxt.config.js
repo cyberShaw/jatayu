@@ -23,7 +23,7 @@ export default {
   },
 
   router: {
-    base: 'http://jatayu.org/'
+    base: '/jatayu/'
   },
   /*
    ** Customize the progress-bar color
