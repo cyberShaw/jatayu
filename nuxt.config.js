@@ -23,7 +23,7 @@ export default {
   },
 
   router: {
-    base: '/jatayu'
+    base: 'saiharsha.com/jatayu/'
   },
   /*
    ** Customize the progress-bar color
