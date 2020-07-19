@@ -1,3 +1,9 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/jatayu/'
+  }
+} : {}
+
 export default {
   mode: 'spa',
   /*
@@ -22,9 +28,7 @@ export default {
     ]
   },
 
-  router: {
-    base: 'saiharsha-b.com/jatayu/'
-  },
+  ...routerBase,
   /*
    ** Customize the progress-bar color
    */

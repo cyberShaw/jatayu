@@ -16,7 +16,7 @@
                                 <nuxt-link to="/dashboard" class="a-menu is-size-5 navbar-item">Dashboard</nuxt-link>
                                 <nuxt-link to="#features" class="a-menu is-size-5 navbar-item">Features</nuxt-link>
                                 <nuxt-link to="#" class="a-menu is-size-5 navbar-item">About</nuxt-link>
-                                <nuxt-link to="/login" class="a-menu is-size-5 navbar-item">Sign In</nuxt-link>
+                                <nuxt-link to="#" class="a-menu is-size-5 navbar-item">Sign In</nuxt-link>
                             </div>
                         </div>
                         <span class="navbar-burger burger" data-target="navbarMenuHeroA">
@@ -136,7 +136,7 @@
                 >Ready to catch some bad guys?</h3>
                 <br />
                 <div class="is-flex is-horizontal-centered">
-                    <nuxt-link to="/dashboard">
+                    <nuxt-link to="">
                         <button class="button is-large has-text-weight-semibold">Sign In 🔐</button>
                     </nuxt-link>
                 </div>
