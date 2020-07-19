@@ -15,8 +15,6 @@ export default {
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=Inter:wght@600&family=Source+Code+Pro&family=Source+Sans+Pro&display=swap' },
       { rel: 'stylesheet', type: 'text/css', href: 'https://fonts.googleapis.com/css?family=Nunito' },
@@ -25,7 +23,7 @@ export default {
   },
 
   router: {
-    base: '/'
+    base: 'http://jatayu.org/'
   },
   /*
    ** Customize the progress-bar color
@@ -35,19 +33,13 @@ export default {
    ** Global CSS
    */
   css: [
-    // '~/assets/css/custom.css',
-    // '~/assets/css/aos.css',
-    '~/assets/css/settings.css',
-    '~/assets/css/style.css',
-    '~/assets/css/slick.css',
-    '~/assets/css/user.css',
-    '~/assets/scss/main.scss',
+    // '~/assets/scss/main.scss',
+    '~/assets/css/style.scss'
   ],
   /*
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '@/plugins/aos.js',
     '@/plugins/medium-zoom.js',
     { src: '~/plugins/after-each.js', mode: 'client' }
   ],
@@ -56,10 +48,6 @@ export default {
    */
   script: [
     { src: 'https://kit.fontawesome.com/145ca0f25f.js' },
-    { src: 'https://code.jquery.com/jquery-3.5.1.min.js' },
-    { src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.0/jquery-migrate.min.js' },
-    { src: 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js' },
-    { src: 'https://unpkg.com/@popperjs/core@2' },
     { src: '~/assets/js/active.js' },
   ],
   buildModules: [
@@ -93,7 +81,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'https://coders-of-blaviken-api.herokuapp.com/api/'
+    baseURL: ''
   },
   /*
    ** Build configuration
@@ -103,5 +91,5 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
-  }
+  },
 }

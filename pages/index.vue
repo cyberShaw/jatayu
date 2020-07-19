@@ -1,179 +1,249 @@
 <template>
-    <div>
-        <hero-bar :has-right-visible="false">
-            Dashboard
-        </hero-bar>
-        <section class="section is-main-section">
-            <!-- <tiles>
-                <card-widget
-                    class="tile is-child"
-                    type="is-primary"
-                    icon="account-multiple"
-                    :number="512"
-                    label="Clients"
-                />
-                <card-widget
-                    class="tile is-child"
-                    type="is-info"
-                    icon="cart-outline"
-                    :number="7770"
-                    prefix="$"
-                    label="Sales"
-                />
-                <card-widget
-                    class="tile is-child"
-                    type="is-success"
-                    icon="chart-timeline-variant"
-                    :number="256"
-                    suffix="%"
-                    label="Performance"
-                />
-            </tiles>
-
-            <card-component
-                title="Performance"
-                icon="finance"
-                header-icon="reload"
-                @header-icon-click="fillChartData"
-            >
-                <div v-if="defaultChart.chartData" class="chart-area">
-                    <line-chart
-                        ref="bigChart"
-                        style="height: 100%"
-                        chart-id="big-line-chart"
-                        :chart-data="defaultChart.chartData"
-                        :extra-options="defaultChart.extraOptions"
-                    />
+    <div id="wrapper" class="has-text-centered-mobile">
+        <section id="hero" class="hero is-medium">
+            <div class="hero-head">
+                <nav class="navbar">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <a href class="navbar-item">
+                                <h3 class="is-family-secondary logo has-text-green is-size-4">
+                                    <strong>Jatayu</strong>
+                                </h3>
+                            </a>
+                        </div>
+                        <div class="navbar-menu">
+                            <div class="navbar-end">
+                                <nuxt-link to="/dashboard" class="a-menu is-size-5 navbar-item">Dashboard</nuxt-link>
+                                <nuxt-link to="#features" class="a-menu is-size-5 navbar-item">Features</nuxt-link>
+                                <nuxt-link to="#" class="a-menu is-size-5 navbar-item">About</nuxt-link>
+                                <nuxt-link to="/login" class="a-menu is-size-5 navbar-item">Sign In</nuxt-link>
+                            </div>
+                        </div>
+                        <span class="navbar-burger burger" data-target="navbarMenuHeroA">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                </nav>
+            </div>
+            <div class="hero-body">
+                <div class="container">
+                    <div class="columns">
+                        <div
+                            class="column is-flex is-column is-horizontal-centered is-vertical-centered"
+                        >
+                            <h1
+                                class="has-text-weight-bold is-family-secondary has-text-green is-size-1 is-size-3-mobile"
+                            >
+                                <em>A Criminal Detection & Tagging System</em>
+                            </h1>
+                            <br />
+                            <p class="is-size-5">
+                                Replacing the conventional face recognition
+                                based criminal tracking systems with Triple
+                                Layer Verification-based distributed national
+                                surveillance system.
+                            </p>
+                        </div>
+                        <div class="column is-flex is-horizontal-centered is-vertical-centered">
+                            <lottie
+                                :options="defaultOptions"
+                                :height="400"
+                                :width="400"
+                                v-on:animCreated="handleAnimation"
+                            />
+                        </div>
+                    </div>
                 </div>
-            </card-component>
-
-            <card-component
-                title="Clients"
-                class="has-table has-mobile-sort-spaced"
-            >
-                <clients-table-sample
-                    :data-url="
-                        `${$router.options.base}data-sources/clients.json`
-                    "
-                />
-            </card-component> -->
+            </div>
         </section>
+
+        <section id="features" class="section has-mustard-bg">
+            <div class="container">
+                <div
+                    class="columns reverse-row-order has-text-centered is-flex is-horizontal-centered is-vertical-centered"
+                >
+                    <div class="column">
+                        <h3
+                            class="is-size-4 is-size-5-mobile is-color-blue has-text-weight-bold is-family-sans-serif is-capitalized"
+                        >Face Recognition</h3>
+                        <p
+                            class="is-size-3 is-size-4-mobile is-color-primary has-text-weight-bold is-family-sans-serif"
+                        >Say hello to the future.</p>
+                        <p class="is-size-5 is-size-6-mobile is-color-primary">
+                            A face detection layer powered by Retinaface which
+                            is robust to positional and resolution changes and
+                            can detect faces in an image with great accuracy.
+                        </p>
+                    </div>
+                    <div class="column svg-container">
+                        <img src="../static/image/video.svg" alt />
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div
+                    class="columns row-order has-text-centered is-flex is-horizontal-centered is-vertical-centered"
+                >
+                    <div class="column svg-container">
+                        <img src="../static/image/data.svg" alt />
+                    </div>
+                    <div class="column">
+                        <h3
+                            class="is-size-4 is-size-5-mobile is-color-blue has-text-weight-bold is-family-sans-serif is-capitalized"
+                        >Data Mining</h3>
+                        <p
+                            class="is-size-3 is-size-4-mobile is-color-primary has-text-weight-bold is-family-sans-serif"
+                        >Effectively Mining, at a deeper level.</p>
+                        <p class="is-size-5 is-size-6-mobile is-color-primary">
+                            The internet, especially social media sites are
+                            scraped for images of the personnel. Only those
+                            images that show more than 85% accuracy are included
+                            into our criminal database.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div
+                    class="columns reverse-row-order has-text-centered is-flex is-horizontal-centered is-vertical-centered"
+                >
+                    <div class="column">
+                        <h3
+                            class="is-size-4 is-size-5-mobile is-color-blue has-text-weight-bold is-family-sans-serif is-capitalized"
+                        >3D Comparsion</h3>
+                        <p
+                            class="is-size-3 is-size-4-mobile is-color-primary has-text-weight-bold is-family-sans-serif"
+                        >Increased Accuracy, with face reconstruction.</p>
+                        <p class="is-size-5 is-size-6-mobile is-color-primary">
+                            Being a false positive outcome in the case of
+                            tagging criminals is a serious error. Therefore, a
+                            3D map of the face is constructed and compared.
+                        </p>
+                    </div>
+                    <div class="column svg-container">
+                        <img src="../static/image/3d.svg" alt />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="section">
+            <div class="container">
+                <h3
+                    class="is-size-3 has-text-centered has-text-weight-bold"
+                >Ready to catch some bad guys?</h3>
+                <br />
+                <div class="is-flex is-horizontal-centered">
+                    <nuxt-link to="/dashboard">
+                        <button class="button is-large has-text-weight-semibold">Sign In 🔐</button>
+                    </nuxt-link>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="content has-text-centered">
+                <p>
+                    <strong>Made with ❤️</strong> by Coders of Blaviken.
+                </p>
+            </div>
+        </footer>
     </div>
 </template>
-
 <script>
-// @ is an alias to /src
-import * as chartConfig from '@/components/Charts/chart.config'
-import HeroBar from '@/components/HeroBar'
-import Tiles from '@/components/Tiles'
-import CardWidget from '@/components/CardWidget'
-import CardComponent from '@/components/CardComponent'
-import LineChart from '@/components/Charts/LineChart'
-// import ClientsTableSample from '@/components/ClientsTableSample'
+import Lottie from './lottie.vue'
+import * as animationData from '../static/lottie/cctv-camera.json'
 export default {
-    name: 'Home',
+    layout: 'landing',
     components: {
-        // ClientsTableSample,
-        LineChart,
-        CardComponent,
-        CardWidget,
-        Tiles,
-        HeroBar,
+        lottie: Lottie
     },
     data() {
         return {
-            defaultChart: {
-                chartData: null,
-                extraOptions: chartConfig.chartOptionsMain
-            }
+            defaultOptions: { animationData: animationData.default },
+            animationSpeed: 1
         }
-    },
-    computed: {
-        titleStack() {
-            return ['Admin', 'Dashboard']
-        }
-    },
-    mounted() {
-        this.fillChartData()
-
-        this.$buefy.snackbar.open({
-            message: 'Welcome back',
-            queue: false
-        })
     },
     methods: {
-        randomChartData(n) {
-            const data = []
-
-            for (let i = 0; i < n; i++) {
-                data.push(Math.round(Math.random() * 200))
-            }
-
-            return data
-        },
-        fillChartData() {
-            this.defaultChart.chartData = {
-                datasets: [
-                    {
-                        fill: false,
-                        borderColor: chartConfig.chartColors.default.primary,
-                        borderWidth: 2,
-                        borderDash: [],
-                        borderDashOffset: 0.0,
-                        pointBackgroundColor:
-                            chartConfig.chartColors.default.primary,
-                        pointBorderColor: 'rgba(255,255,255,0)',
-                        pointHoverBackgroundColor:
-                            chartConfig.chartColors.default.primary,
-                        pointBorderWidth: 20,
-                        pointHoverRadius: 4,
-                        pointHoverBorderWidth: 15,
-                        pointRadius: 4,
-                        data: this.randomChartData(9)
-                    },
-                    {
-                        fill: false,
-                        borderColor: chartConfig.chartColors.default.info,
-                        borderWidth: 2,
-                        borderDash: [],
-                        borderDashOffset: 0.0,
-                        pointBackgroundColor:
-                            chartConfig.chartColors.default.info,
-                        pointBorderColor: 'rgba(255,255,255,0)',
-                        pointHoverBackgroundColor:
-                            chartConfig.chartColors.default.info,
-                        pointBorderWidth: 20,
-                        pointHoverRadius: 4,
-                        pointHoverBorderWidth: 15,
-                        pointRadius: 4,
-                        data: this.randomChartData(9)
-                    },
-                    {
-                        fill: false,
-                        borderColor: chartConfig.chartColors.default.danger,
-                        borderWidth: 2,
-                        borderDash: [],
-                        borderDashOffset: 0.0,
-                        pointBackgroundColor:
-                            chartConfig.chartColors.default.danger,
-                        pointBorderColor: 'rgba(255,255,255,0)',
-                        pointHoverBackgroundColor:
-                            chartConfig.chartColors.default.danger,
-                        pointBorderWidth: 20,
-                        pointHoverRadius: 4,
-                        pointHoverBorderWidth: 15,
-                        pointRadius: 4,
-                        data: this.randomChartData(9)
-                    }
-                ],
-                labels: ['01', '02', '03', '04', '05', '06', '07', '08', '09']
-            }
-        }
-    },
-    head() {
-        return {
-            title: 'Dashboard — Admin Null Nuxt.js Bulma'
+        handleAnimation: function(anim) {
+            this.anim = anim
         }
     }
 }
 </script>
+<style lang="scss">
+#features {
+    background-color: #83d4ff;
+}
+
+@media (max-width: 1024px) {
+    .reverse-row-order {
+        flex-direction: column-reverse;
+        display: flex;
+    }
+
+    .row-order {
+        flex-direction: column;
+        display: flex;
+    }
+}
+
+.feature-img {
+    max-width: 60%;
+    /* margin: 0 auto; */
+}
+
+.is-horizontal-centered {
+    justify-content: center;
+}
+
+.is-vertical-centered {
+    align-items: center;
+}
+
+.is-column {
+    flex-direction: column;
+}
+
+.section .container,
+.hero .hero-body,
+.hero .hero-head {
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/*
+Some aesthetic improvements
+*/
+nav {
+    padding-top: 20px;
+    max-height: 50px;
+}
+
+.paragraph {
+    width: 600px;
+    line-height: 1.5em;
+}
+
+/*
+Hero
+*/
+.burger {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+@media (min-width: 1024px) {
+    .hero-body {
+        background-size: 30%;
+        background-position: 80% 50%;
+        background-repeat: no-repeat;
+    }
+    .hero-body p {
+        width: 600px;
+    }
+}
+</style>
