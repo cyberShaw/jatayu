@@ -1,6 +1,7 @@
 <template>
-    <div id="app">
+    <div class="hero is-fullheight" id="app">
         <nuxt />
+        <Footer />
     </div>
 </template>
 
@@ -9,11 +10,12 @@
 // import NavBar from '@/components/NavBar'
 // import AsideMenu from '@/components/AsideMenu'
 // import FooterBar from '@/components/FooterBar'
-
+import Footer from '@/components/Footer'
 export default {
     name: 'App',
     components: {
         // FooterBar,
+        Footer
         // AsideMenu,
         // NavBar
     },
