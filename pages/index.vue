@@ -40,7 +40,7 @@
                                         >About</nuxt-link
                                     >
                                     <nuxt-link
-                                        to="#"
+                                        to="/login"
                                         class="a-menu is-size-5 navbar-item"
                                         >Sign In</nuxt-link
                                     >
@@ -193,7 +193,7 @@
                     </h3>
                     <br />
                     <div class="is-flex is-horizontal-centered">
-                        <nuxt-link to="">
+                        <nuxt-link to="/login">
                             <button
                                 class="button is-large has-text-weight-semibold"
                             >
