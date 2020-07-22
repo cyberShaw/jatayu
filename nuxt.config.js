@@ -69,9 +69,9 @@ export default {
     strategies: {
       local: {
         endpoints: {
-          login: { url: '/api/login', method: 'post', propertyName: 'token' },
-          logout: { url: '/api/auth/logout', method: 'post' },
-          user: { url: '/api/user', method: 'get', propertyName: 'user' }
+          login: { url: '/signin', method: 'post', propertyName: 'data.token' },
+          logout: false,
+          user: { url: '/api/user', method: 'get', propertyName: 'data' }
         },
         // tokenRequired: true,
         tokenType: '',
@@ -85,7 +85,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: ''
+    baseURL: 'http://127.0.0.1:8000/'
   },
   /*
    ** Build configuration
