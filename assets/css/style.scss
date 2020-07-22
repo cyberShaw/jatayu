@@ -34,13 +34,19 @@
     color: #0010a1;
 }
 
+html, body {
+    height: 100%;
+}
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
 @import "~bulma/sass/utilities/_all";
 
 $family-primary: "Inter";
 $family-secondary: "Libre Baskerville";
 $family-sans-serif: "Work Sans";
+$family-monospace: "Source Code Pro";
 
 $footer-padding: 3rem 1.5rem 3rem;
 
@@ -49,9 +55,9 @@ $button-color: #ffffff;
 
 @import "~bulma";
 
-:root {
-    scroll-behavior: smooth;
-}
+// :root {
+//     scroll-behavior: smooth;
+// }
 
 // Page transition animation
 .page-enter-active, .page-leave-active {

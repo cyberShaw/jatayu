@@ -62,7 +62,7 @@ export default {
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/auth',
-    ['nuxt-buefy', { materialDesignIcons: false }],
+    'nuxt-buefy',
   ],
 
   auth: {
@@ -85,7 +85,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: 'http://127.0.0.1:8000/'
+    baseURL: ' https://coders-of-blaviken-api.herokuapp.com/api/'
   },
   /*
    ** Build configuration

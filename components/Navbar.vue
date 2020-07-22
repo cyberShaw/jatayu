@@ -13,7 +13,7 @@
             <div class="navbar-menu">
                 <div class="navbar-end">
                     <nuxt-link
-                        to="/dashboard"
+                        to="/dash"
                         class="a-menu is-size-5 navbar-item"
                         >Dashboard</nuxt-link
                     >
