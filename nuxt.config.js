@@ -63,6 +63,7 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     'nuxt-buefy',
+    'nuxt-leaflet'
   ],
 
   auth: {

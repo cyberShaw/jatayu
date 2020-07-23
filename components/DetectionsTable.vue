@@ -1,26 +1,16 @@
 <template>
     <div>
-        <modal-box
-            :is-active="isModalActive"
-            :trash-object-name="trashObjectName"
-            @confirm="trashConfirm"
-            @cancel="trashCancel"
-        />
-        <map-modal
-            :is-active="isMapModalActive"
-            :lat="37.7397"
-            :long="-121.4252"
-            @close="mapClose"
-        />
         <b-table
             :loading="isLoading"
             :paginated="paginated"
             focusable
             :selected.sync="selected"
             :mobile-cards="hasMobileCards"
-            striped="isStriped"
+            :striped="isStriped"
+            detailed
+            detail-key="id"
             :per-page="perPage"
-            hoverable="true"
+            hoverable
             default-sort="id"
             default-sort-direction="desc"
             :sort-icon="sortIcon"
@@ -73,7 +63,7 @@
                 >
                     <template slot="header" slot-scope="{ column }">
                         <b-tooltip
-                            label="Click on the coordinates to show map!"
+                            label="Click on the icon at the left to show map!"
                             dashed
                         >
                             <p class="is-family-monospace">
@@ -81,9 +71,8 @@
                             </p>
                         </b-tooltip>
                     </template>
-                    <div class="modalToggle" @click.prevent="mapOpen()">
-                        {{ props.row.location }}
-                    </div>
+
+                    {{ props.row.location }}
                 </b-table-column>
                 <b-table-column
                     class="image is-square"
@@ -106,7 +95,10 @@
                             </p>
                         </b-tooltip>
                     </template>
-                    {{ props.row.time_stamp }}
+                    <span class="tag is-info">
+                        {{ props.row.time_stamp }}
+                    </span>
+                    <!-- {{ props.row.time_stamp }} -->
                 </b-table-column>
             </template>
 
@@ -126,18 +118,28 @@
                     </template>
                 </div>
             </section>
+            <template slot="detail" slot-scope="props">
+                <article class="media">
+                    <div class="media-content">
+                        <div class="content">
+                            <Maps :loc="props.row.location" />
+                        </div>
+                    </div>
+                </article>
+            </template>
         </b-table>
     </div>
 </template>
 
 <script>
 import axios from 'axios'
-import ModalBox from '@/components/ModalBox'
-import MapModal from '@/components/MapModal'
+import Maps from '@/components/Maps'
 
 export default {
     name: 'DetectionsTable',
-    components: { ModalBox, MapModal },
+    components: {
+        Maps
+    },
     props: {
         dataUrl: {
             type: String,
@@ -150,16 +152,16 @@ export default {
     },
     data() {
         return {
-            isModalActive: false,
-            isMapModalActive: false,
+            active: false,
             trashObject: null,
             clients: [],
+            isStriped: true,
             selected: null,
             isLoading: false,
             paginated: false,
             perPage: 10,
             checkedRows: [],
-            coord: [],
+            coord: '',
             sortIcon: 'arrow-up',
             sortIconSize: 'is-medium'
         }
@@ -181,17 +183,12 @@ export default {
             this.$axios
                 .get(this.dataUrl)
                 .then((r) => {
-                    // console.log(r.data.detections)
                     this.isLoading = false
                     if (r.data && r.data.detections) {
                         if (r.data.detections.length > this.perPage) {
                             this.paginated = true
                         }
                         this.clients = r.data.detections
-                        // for (i = 0; i < r.data.detections.length; i++) {
-                        //   temp = r.data.detections.location.replace	(%B0\ NE, '').split(',')
-                        // }
-                        console.log(this.clients)
                     }
                 })
                 .catch((e) => {
@@ -208,9 +205,6 @@ export default {
             this.trashObject = trashObject
             this.isModalActive = true
         },
-        mapOpen() {
-            this.isMapModalActive = true
-        },
         trashConfirm() {
             this.isModalActive = false
             this.$buefy.snackbar.open({
@@ -221,9 +215,6 @@ export default {
         trashCancel() {
             this.isModalActive = false
         },
-        mapClose() {
-            this.isMapModalActive = false
-        }
     }
 }
 </script>
