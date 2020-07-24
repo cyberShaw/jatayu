@@ -53,7 +53,7 @@
                             </p>
                         </b-tooltip>
                     </template>
-                    <nuxt-link :to="{name:'criminal-id', params: {id: props.row.cid}}" class="button is-small is-primary">
+                    <nuxt-link :to="{name:'criminal-cid', params: {cid: props.row.cid}}" class="button is-small is-primary">
                     {{ props.row.cid }}
                     </nuxt-link>
                 </b-table-column>
