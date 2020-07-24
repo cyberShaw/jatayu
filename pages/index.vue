@@ -168,6 +168,7 @@ import Lottie from './lottie.vue'
 import Navbar from '@/components/Navbar.vue'
 import * as animationData from '../static/lottie/cctv-camera.json'
 export default {
+    layout: 'default',
     components: {
         lottie: Lottie,
         Navbar
