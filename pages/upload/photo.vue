@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <p>lol</p>
-  </div>
+  <p>Photo</p>
 </template>
 
 <script>

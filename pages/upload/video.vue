@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <p>lol</p>
-  </div>
+  <p>
+    Video
+  </p>
 </template>
 
 <script>

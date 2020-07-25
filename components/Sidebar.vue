@@ -1,27 +1,52 @@
 <template>
-    <b-menu>
-        <b-menu-list label="Menu">
-        <b-menu-item @click="$router.push('/dash')" icon="information-outline" label="Dashboard"></b-menu-item>
-        <b-menu-item @click="$router.push('/detections')" icon="settings" label="Detections"></b-menu-item>
-        <b-menu-item @click="$router.push('/track')" icon="crosshairs-gps" label="Track"></b-menu-item>
-        <b-menu-item @click="$router.push('/upload')" icon="crosshairs-gps" label="Upload"></b-menu-item>
-        <b-menu-item icon="account" label="My Account">
-            <b-menu-item label="Account data"></b-menu-item>
-            <b-menu-item label="Addresses"></b-menu-item>
-        </b-menu-item>
-        </b-menu-list>
-        <b-menu-list label="Actions">
-        <b-menu-item label="Logout"></b-menu-item>
-        </b-menu-list>
-    </b-menu>
+  <b-menu activable>
+    <b-menu-list label="Dashboard">
+      <b-menu-item
+        @click="$router.push('/dash')"
+        icon="information-outline"
+        label="Dashboard"
+      ></b-menu-item>
+    </b-menu-list>
+    <b-menu-list label="Track & Detect">
+      <b-menu-item
+        @click="$router.push('/detections')"
+        icon="settings"
+        label="Detections"
+      ></b-menu-item>
+      <b-menu-item
+        @click="$router.push('/track')"
+        icon="crosshairs-gps"
+        label="Recents & Tracking"
+      ></b-menu-item>
+      <b-menu-item
+        @click="$router.push('/watchlist')"
+        icon="crosshairs-gps"
+        label="Watchlist"
+      ></b-menu-item>
+    </b-menu-list>
+    <b-menu-list label="Upload">
+      <b-menu-item
+        @click="$router.push('/upload/video')"
+        icon="settings"
+        label="Upload a Video"
+      ></b-menu-item>
+      <b-menu-item
+        @click="$router.push('/upload/photo')"
+        icon="settings"
+        label="Upload a Photo"
+      ></b-menu-item>
+    </b-menu-list>
+    <b-menu-list label="Account">
+      <b-menu-item @click="$router.push('/profile')" label="Profile"></b-menu-item>
+      <b-menu-item @click="$router.push('/')" label="Logout"></b-menu-item>
+    </b-menu-list>
+  </b-menu>
 </template>
 
 <script>
 export default {
-    name: 'Sidebar'
-}
+  name: 'Sidebar',
+};
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

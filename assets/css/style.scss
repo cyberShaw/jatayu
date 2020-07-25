@@ -15,54 +15,57 @@
 } */
 
 .is-light {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .is-heavy {
-    font-weight: 800;
+  font-weight: 800;
 }
 
 .is-italic {
-    font-style: italic;
+  font-style: italic;
 }
 
 .is-color-primary {
-    color: #2b292d;
+  color: #2b292d;
 }
 
 .is-color-blue {
-    color: #0010a1;
+  color: #0010a1;
 }
 
-html, body {
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 // Fonts
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Libre+Baskerville:wght@400;700&family=Work+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 
-@import "~bulma/sass/utilities/_all";
+@import '~bulma/sass/utilities/_all';
 
-$family-primary: "Inter";
-$family-secondary: "Libre Baskerville";
-$family-sans-serif: "Work Sans";
-$family-monospace: "Source Code Pro";
+$family-primary: 'Inter';
+$family-secondary: 'Libre Baskerville';
+$family-sans-serif: 'Work Sans';
+$family-monospace: 'Source Code Pro';
 
 $footer-padding: 3rem 1.5rem 3rem;
 
 $button-background-color: #0010a1;
 $button-color: #ffffff;
 
-@import "~bulma";
+@import '~bulma';
 
 // :root {
 //     scroll-behavior: smooth;
 // }
 
 // Page transition animation
-.page-enter-active, .page-leave-active {
-    transition: opacity .4s ease-in-out;
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.4s ease-in-out;
 }
-.page-enter, .page-leave-to {
-    opacity: 0;
+.page-enter,
+.page-leave-to {
+  opacity: 0;
 }
