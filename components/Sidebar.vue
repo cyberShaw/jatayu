@@ -3,42 +3,53 @@
     <b-menu-list label="Dashboard">
       <b-menu-item
         @click="$router.push('/dash')"
-        icon="information-outline"
+        icon="tachometer-alt"
+        icon-pack="fas"
         label="Dashboard"
       ></b-menu-item>
     </b-menu-list>
     <b-menu-list label="Track & Detect">
       <b-menu-item
         @click="$router.push('/detections')"
-        icon="settings"
+        icon="exclamation-triangle"
+        icon-pack="fas"
         label="Detections"
       ></b-menu-item>
       <b-menu-item
         @click="$router.push('/track')"
-        icon="crosshairs-gps"
+        icon="search-location"
+        icon-pack="fas"
         label="Recents & Tracking"
       ></b-menu-item>
       <b-menu-item
         @click="$router.push('/watchlist')"
-        icon="crosshairs-gps"
+        icon="binoculars"
+        icon-pack="fas"
         label="Watchlist"
       ></b-menu-item>
     </b-menu-list>
     <b-menu-list label="Upload">
       <b-menu-item
         @click="$router.push('/upload/video')"
-        icon="settings"
+        icon="video"
+        icon-pack="fas"
         label="Upload a Video"
       ></b-menu-item>
       <b-menu-item
         @click="$router.push('/upload/photo')"
-        icon="settings"
+        icon="images"
+        icon-pack="fas"
         label="Upload a Photo"
       ></b-menu-item>
     </b-menu-list>
     <b-menu-list label="Account">
-      <b-menu-item @click="$router.push('/profile')" label="Profile"></b-menu-item>
-      <b-menu-item @click="$router.push('/')" label="Logout"></b-menu-item>
+      <b-menu-item
+        @click="$router.push('/profile')"
+        icon="id-badge"
+        icon-pack="fas"
+        label="Profile"
+      ></b-menu-item>
+      <b-menu-item @click="$router.push('/')" icon="sign-out-alt" icon-pack="fas" label="Sign Out"></b-menu-item>
     </b-menu-list>
   </b-menu>
 </template>
