@@ -63,7 +63,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     'nuxt-buefy',
-    'nuxt-leaflet'
+    ['nuxt-gmaps', {
+      key: 'AIzaSyC9U4sCMhib5oL3laji-Tlb7AJgKrioYEM',
+      //you can use libraries: ['places']
+    }]
   ],
 
   auth: {
