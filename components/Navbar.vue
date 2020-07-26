@@ -12,7 +12,7 @@
         <div class="navbar-end">
           <nuxt-link to="/dash" class="a-menu is-size-5 navbar-item">Dashboard</nuxt-link>
           <nuxt-link to="#features" class="a-menu is-size-5 navbar-item">Features</nuxt-link>
-          <nuxt-link to="#" class="a-menu is-size-5 navbar-item">About</nuxt-link>
+          <nuxt-link to="/about" class="a-menu is-size-5 navbar-item">About</nuxt-link>
           <nuxt-link to="/login" class="a-menu is-size-5 navbar-item">Sign In</nuxt-link>
         </div>
       </div>
