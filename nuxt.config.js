@@ -16,7 +16,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'Jatayu | Coders of Blaviken',
+    title: 'Jatayu™ | Coders of Blaviken',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
