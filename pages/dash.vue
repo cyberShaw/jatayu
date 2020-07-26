@@ -1,6 +1,7 @@
 <template>
   <div class="section">
-    lol
+    <p class="title has-text-centered">Dashboard</p>
+    <p class="subtitle has-text-centered">Coming Soon!</p>
   </div>
 </template>
 

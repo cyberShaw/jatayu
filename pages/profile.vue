@@ -57,8 +57,4 @@ export default {
   justify-content: center;
   align-items: center;
 }
-.hero-body {
-  padding-bottom: 0.5rem;
-  padding-top: 0.5rem;
-}
 </style>

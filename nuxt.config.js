@@ -92,7 +92,7 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    baseURL: ' https://coders-of-blaviken-api.herokuapp.com/api/',
+    baseURL: '',
   },
   /*
    ** Build configuration

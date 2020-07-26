@@ -49,10 +49,25 @@ $family-secondary: 'Libre Baskerville';
 $family-sans-serif: 'Work Sans';
 $family-monospace: 'Source Code Pro';
 
+// Footer
 $footer-padding: 3rem 1.5rem 3rem;
 
+// Buttons
 $button-background-color: #0010a1;
 $button-color: #ffffff;
+
+// Menu
+$menu-label-font-size: 1em;
+$menu-item-radius: 10px;
+
+// Hero
+$hero-body-padding: 0.5rem 0.5rem;
+
+p.menu-label {
+  font-family: $family-monospace;
+  font-weight: bold;
+  color: black;
+}
 
 @import '~bulma';
 
