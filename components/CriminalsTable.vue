@@ -3,10 +3,10 @@
     <b-table
       :loading="isLoading"
       :paginated="paginated"
-      hasMobileCards
+      pagination-position="both"
+      pagination-size="is-small"
+      mobile-cards
       :striped="isStriped"
-      detailed
-      detail-key="id"
       :per-page="perPage"
       hoverable
       default-sort="id"
@@ -16,46 +16,39 @@
       :data="clients"
     >
       <template slot-scope="props">
-        <b-table-column label="Detection ID" field="id" searchable sortable>
+        <b-table-column label="Criminal Name" field="name" searchable sortable>
           <template slot="header" slot-scope="{column}">
-            <b-tooltip label="Search with the detection ID using the box!" dashed>
+            <b-tooltip label="Search using the Criminal Name" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
             </b-tooltip>
           </template>
-          {{ props.row.id }}
+          {{ props.row.name }}
         </b-table-column>
-        <b-table-column label="Criminal ID" field="cid" searchable sortable>
+        <b-table-column label="Criminal ID" field="id" searchable sortable>
           <template slot="header" slot-scope="{column}">
             <b-tooltip label="Search with the Criminal ID using the box!" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
             </b-tooltip>
           </template>
           <nuxt-link
-            :to="{name: 'criminal-cid', params: {cid: props.row.cid}}"
+            :to="{name: 'criminal-cid', params: {cid: props.row.id}}"
             class="button is-small is-link has-text-weight-bold"
-          >{{ props.row.cid }}</nuxt-link>
+          >{{ props.row.id }}</nuxt-link>
         </b-table-column>
-        <b-table-column label="Location: Coordinates" field="location" sortable centered>
-          <template slot="header" slot-scope="{column}">
-            <b-tooltip label="Click on the icon at the left to show map!" dashed>
-              <p class="is-family-monospace">{{ column.label }}</p>
-            </b-tooltip>
-          </template>
-          {{ props.row.location }}
-        </b-table-column>
-        <b-table-column class="image is-square" label="Detected Image" field="progress">
+        <b-table-column label="Severity" field="severity" sortable centered>{{ props.row.severity }}</b-table-column>
+        <b-table-column class="image is-square" label="Criminal Database Image" field="progress">
           <template slot="header" slot-scope="{column}">
             <p class="is-family-monospace">{{ column.label }}</p>
           </template>
-          <img class="zoom" :src="props.row.rsrc" />
+          <img class="zoom" :src="props.row.picture" />
         </b-table-column>
-        <b-table-column label="Time Stamp" searchable sortable>
+        <b-table-column label="Gender" searchable sortable>
           <template slot="header" slot-scope="{column}">
-            <b-tooltip label="Search with the timestamp using the box!" dashed>
+            <b-tooltip label="Search with Gender using the box!" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
             </b-tooltip>
           </template>
-          <span class="tag is-link">{{ props.row.time_stamp }}</span>
+          <span class="tag is-link">{{ props.row.gender }}</span>
           <!-- {{ props.row.time_stamp }} -->
         </b-table-column>
       </template>
@@ -76,28 +69,15 @@
           </template>
         </div>
       </section>
-      <template slot="detail" slot-scope="props">
-        <article class="media">
-          <div class="media-content">
-            <div class="content">
-              <Maps :loc="props.row.location" />
-            </div>
-          </div>
-        </article>
-      </template>
     </b-table>
   </div>
 </template>
 
 <script>
 import axios from 'axios';
-import Maps from '@/components/Maps';
 
 export default {
-  name: 'DetectionsTable',
-  components: {
-    Maps,
-  },
+  name: 'CriminalsTable',
   props: {
     dataUrl: {
       type: String,
@@ -117,7 +97,7 @@ export default {
       selected: null,
       isLoading: false,
       paginated: false,
-      perPage: 10,
+      perPage: 5,
       checkedRows: [],
       coord: '',
       sortIcon: 'arrow-up',
@@ -142,11 +122,11 @@ export default {
         .get(this.dataUrl)
         .then(r => {
           this.isLoading = false;
-          if (r.data && r.data.detections) {
-            if (r.data.detections.length > this.perPage) {
+          if (r.data && r.data.criminals) {
+            if (r.data.criminals.length > this.perPage) {
               this.paginated = true;
             }
-            this.clients = r.data.detections;
+            this.clients = r.data.criminals;
           }
         })
         .catch(e => {
@@ -157,22 +137,6 @@ export default {
           });
         });
     }
-  },
-  methods: {
-    trashModal(trashObject) {
-      this.trashObject = trashObject;
-      this.isModalActive = true;
-    },
-    trashConfirm() {
-      this.isModalActive = false;
-      this.$buefy.snackbar.open({
-        message: 'Confirmed',
-        queue: false,
-      });
-    },
-    trashCancel() {
-      this.isModalActive = false;
-    },
   },
 };
 </script>
