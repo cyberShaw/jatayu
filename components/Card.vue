@@ -45,3 +45,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.card {
+  border-radius: 20px;
+}
+</style>

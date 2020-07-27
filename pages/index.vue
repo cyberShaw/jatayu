@@ -128,9 +128,7 @@
           <br />
           <div class="is-flex is-horizontal-centered">
             <nuxt-link to="/login">
-              <button class="button is-large has-text-weight-semibold">
-                Sign In 🔐
-              </button>
+              <button class="button is-large has-text-weight-semibold">Sign In 🔐</button>
             </nuxt-link>
           </div>
         </div>
@@ -142,6 +140,7 @@
 import Lottie from './lottie.vue';
 import Navbar from '@/components/Navbar.vue';
 import * as animationData from '../static/lottie/cctv-camera.json';
+
 export default {
   layout: 'default',
   components: {
