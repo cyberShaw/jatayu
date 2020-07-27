@@ -47,11 +47,22 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/medium-zoom.js', {src: '~/plugins/after-each.js', mode: 'client'}],
+  plugins: [
+    '@/plugins/medium-zoom.js',
+    {src: '~/plugins/after-each.js', mode: 'client'},
+    {
+      src: '~/plugins/chart.js',
+      mode: 'client',
+    },
+  ],
   /*
    ** Nuxt.js dev-modules
    */
-  script: [{src: 'https://kit.fontawesome.com/145ca0f25f.js'}, {src: '~/assets/js/active.js'}],
+  script: [
+    {src: 'https://kit.fontawesome.com/145ca0f25f.js'},
+    {src: '~/assets/js/active.js'},
+    {src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js'},
+  ],
   buildModules: [],
   /*
    ** Nuxt.js modules
