@@ -1,15 +1,18 @@
 <template>
-  <div class="section">
-    <p class="title has-text-centered">Dashboard</p>
-    <p class="subtitle has-text-centered">Coming Soon!</p>
+  <div class="page">
+    <PageHead title="Watchlist" subtitle="Dashboard" />
   </div>
 </template>
 
 <script>
-import {mapGetters} from 'vuex';
+// import {mapGetters} from 'vuex';
+import PageHead from '@/components/PageHead';
 
 export default {
   layout: 'dashboard',
+  components: {
+    PageHead,
+  },
   data() {
     return {
       email: '',

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <PageHead title="Profile" subtitle="Account" />
     <div class="section">
       <div class="media">
