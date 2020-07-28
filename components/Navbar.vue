@@ -43,7 +43,6 @@
   </div>
 </template>
 
-
 <script>
 export default {
   name: 'Navbar',
@@ -72,7 +71,7 @@ export default {
   height: 100%;
   width: 0;
   position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
+  z-index: 10; /* Sit on top */
   left: 0;
   top: 0;
   background-color: rgb(0, 0, 0); /* Black fallback color */
@@ -126,7 +125,6 @@ export default {
 
 .menu-icon {
   padding: 1rem -1rem 1rem 1rem;
-  mix-blend-mode: exclusion;
   $size: 50px;
   border-radius: 10px;
   height: $size;
