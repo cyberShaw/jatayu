@@ -15,7 +15,7 @@
           label="Watchlist"
         ></b-menu-item>
       </b-menu-list>
-      <b-menu-list label="Track & Detect">
+      <b-menu-list label="Detect & Track">
         <b-menu-item
           @click="$router.push('/detections')"
           icon="exclamation-triangle"
