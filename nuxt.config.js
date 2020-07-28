@@ -36,10 +36,7 @@ export default {
   },
 
   ...routerBase,
-  /*
-   ** Customize the progress-bar color
-   */
-  // loading: '~/components/Loader.vue',
+
   /*
    ** Global CSS
    */
@@ -47,12 +44,36 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/medium-zoom.js', {src: '~/plugins/after-each.js', mode: 'client'}],
+  plugins: [
+    '@/plugins/medium-zoom.js',
+    {src: '~/plugins/after-each.js', mode: 'client'},
+    {
+      src: '~/plugins/chart.js',
+      mode: 'client',
+    },
+    '@/plugins/firebase.js',
+    '@/plugins/fireauth.js',
+  ],
+
+  env: {
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.MESSAGING_SENDER_ID,
+    appId: process.env.APP_ID,
+    measurementId: process.env.MEASUREMENT_ID,
+  },
   /*
    ** Nuxt.js dev-modules
    */
-  script: [{src: 'https://kit.fontawesome.com/145ca0f25f.js'}, {src: '~/assets/js/active.js'}],
-  buildModules: [],
+  script: [
+    {src: 'https://kit.fontawesome.com/145ca0f25f.js'},
+    {src: '~/assets/js/active.js'},
+    {src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js'},
+  ],
+  buildModules: ['@nuxtjs/dotenv'],
   /*
    ** Nuxt.js modules
    */
@@ -65,7 +86,6 @@ export default {
       'nuxt-gmaps',
       {
         key: 'AIzaSyC9U4sCMhib5oL3laji-Tlb7AJgKrioYEM',
-        //you can use libraries: ['places']
       },
     ],
   ],

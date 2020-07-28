@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <ProfileCard v-if="detections" :cid="$route.params.cid" :img_rsc="detections[0].rsrc" />
+  <div class="page">
+    <ProfileCard v-if="criminals" :cid="$route.params.cid" :img_rsc="criminals[0].picture" />
   </div>
 </template>
 
@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      detections: null,
+      criminals: null,
     };
   },
   created() {
@@ -22,17 +22,20 @@ export default {
   methods: {
     getData() {
       this.$axios
-        .get('/detection/' + this.$route.params.cid)
+        .get('https://coders-of-blaviken-api.herokuapp.com/api/criminals/' + this.$route.params.cid)
         .then(res => {
-          if (res.data && res.data.detections) {
-            this.detections = res.data.detections;
-            console.log(this.detections[0].rsrc);
+          if (res.data && res.data.criminals) {
+            this.criminals = res.data.criminals;
+            console.log(this.criminals[0].rsrc);
           }
         })
         .catch(err => {
           console.log(err);
         });
     },
+    // criminalDetails() {
+    //   this.
+    // }
   },
 };
 </script>

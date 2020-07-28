@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="page">
     <PageHead title="Profile" subtitle="Account" />
     <div class="section">
       <div class="media">
@@ -17,7 +17,7 @@
             </div>
             <div class="media">
               <div class="media-left has-text-weight-bold">📧 Email:</div>
-              <div class="media-content">jatayu-admin@gmail.com</div>
+              <div class="media-content">{{ $store.state.user.email }}</div>
             </div>
             <div class="media">
               <div class="media-left has-text-weight-bold">🆔 User ID:</div>
@@ -31,6 +31,11 @@
               <div class="media-left has-text-weight-bold">🏙️ City:</div>
               <div class="media-content">Coimbatore</div>
             </div>
+            <div class="media">
+              <b-button @click="signOut" type="is-link" size="is-medium" class="is-fullwidth">
+                <p class="has-text-weight-bold">Sign Out</p>
+              </b-button>
+            </div>
           </div>
         </div>
       </div>
@@ -39,11 +44,24 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex';
 import PageHead from '@/components/PageHead';
 export default {
   layout: 'dashboard',
   components: {
     PageHead,
+  },
+  computed: {
+    ...mapGetters({
+      user: 'user',
+    }),
+  },
+  methods: {
+    signOut() {
+      this.$store.dispatch('signOut').catch(err => {
+        console.log(err);
+      });
+    },
   },
 };
 </script>
