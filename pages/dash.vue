@@ -13,28 +13,9 @@ export default {
   components: {
     PageHead,
   },
+  // middleware: 'auth',
   data() {
-    return {
-      email: '',
-    };
-  },
-
-  mounted() {
-    this.$axios
-      .get('/me')
-      .then(res => {
-        this.email = res.data.email;
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  },
-
-  methods: {
-    async logout() {
-      await this.$auth.logout();
-      this.$router.push('/');
-    },
+    return {};
   },
 };
 </script>
