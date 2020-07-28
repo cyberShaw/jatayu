@@ -101,4 +101,12 @@ export default {
      */
     extend(config, ctx) {},
   },
+
+  pwa: {
+    manifest: {
+      name: 'Jatayu | Criminal Detection and Tracking',
+      short_name: 'Jatayu',
+      lang: 'en',
+    },
+  },
 };
