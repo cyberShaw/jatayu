@@ -36,10 +36,7 @@ export default {
   },
 
   ...routerBase,
-  /*
-   ** Customize the progress-bar color
-   */
-  // loading: '~/components/Loader.vue',
+
   /*
    ** Global CSS
    */
@@ -54,6 +51,8 @@ export default {
       src: '~/plugins/chart.js',
       mode: 'client',
     },
+    '@/plugins/firebase.js',
+    '@/plugins/fireauth.js',
   ],
   /*
    ** Nuxt.js dev-modules
@@ -63,7 +62,7 @@ export default {
     {src: '~/assets/js/active.js'},
     {src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js'},
   ],
-  buildModules: [],
+  buildModules: ['@nuxtjs/dotenv'],
   /*
    ** Nuxt.js modules
    */
@@ -75,7 +74,6 @@ export default {
       'nuxt-gmaps',
       {
         key: 'AIzaSyC9U4sCMhib5oL3laji-Tlb7AJgKrioYEM',
-        //you can use libraries: ['places']
       },
     ],
   ],

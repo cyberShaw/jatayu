@@ -63,7 +63,7 @@
           label="Profile"
         ></b-menu-item>
         <b-menu-item
-          @click="$router.push('/')"
+          @click="signOut"
           icon="sign-out-alt"
           icon-pack="fas"
           label="Sign Out"
@@ -76,6 +76,18 @@
 <script>
 export default {
   name: 'Sidebar',
+  methods: {
+    signOut() {
+      this.$store
+        .dispatch('signOut')
+        .then(() => {
+          this.$router.push('/');
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
+  },
 };
 </script>
 

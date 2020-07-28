@@ -12,6 +12,7 @@
       <section id="hero" class="hero is-medium">
         <div class="hero-head">
           <Navbar />
+          <ProfileBadge />
         </div>
         <div class="hero-body">
           <div class="container">
@@ -140,12 +141,14 @@
 import Lottie from './lottie.vue';
 import Navbar from '@/components/Navbar.vue';
 import * as animationData from '../static/lottie/cctv-camera.json';
+import ProfileBadge from '@/components/ProfileBadge';
 
 export default {
   layout: 'default',
   components: {
     lottie: Lottie,
     Navbar,
+    ProfileBadge,
   },
   data() {
     return {
