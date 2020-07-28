@@ -68,6 +68,23 @@ export default {
         //you can use libraries: ['places']
       },
     ],
+    ['nuxt-i18n', { locales: [
+      {
+        name: 'Hindi',
+        code: 'hi',
+        iso: 'hi',
+        file: 'hi.js'
+      },
+      {
+        name: 'English',
+        code: 'en',
+        iso: 'en-US',
+        file: 'en-US.js'
+      },
+    ],
+    langDir: 'lang/',
+    defaultLocale: 'en',
+   }],
   ],
 
   auth: {
