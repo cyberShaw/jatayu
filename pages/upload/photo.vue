@@ -122,9 +122,9 @@ export default {
     uploadPhoto() {
       // console.log(this.file);
       let fd = new FormData();
-      fd.append('image', this.file);
+      fd.append('video', this.file);
       this.$axios({
-        url: 'https://upload-dimg.herokuapp.com/upload/image',
+        url: 'https://upload-dimg.herokuapp.com/upload/video',
         headers: {
           'Content-Type': 'multipart/form-data',
         },

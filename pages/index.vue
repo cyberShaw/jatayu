@@ -124,7 +124,7 @@
       <section id="cta" class="section">
         <div class="container">
           <h3 class="is-size-3 has-text-centered has-text-weight-bold">
-            Ready to catch some bad guys?
+            Track and Detect Criminals!
           </h3>
           <br />
           <div class="is-flex is-horizontal-centered">
