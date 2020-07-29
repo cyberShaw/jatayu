@@ -36,17 +36,14 @@ export default {
         .then(res => {
           if (res.data && res.data.criminals) {
             this.criminals = res.data.criminals;
-            console.log(this.criminals[0].rsrc);
-            console.log(this.criminals);
+            // console.log(this.criminals[0].rsrc);
+            // console.log(this.criminals);
           }
         })
         .catch(err => {
           console.log(err);
         });
     },
-    // criminalDetails() {
-    //   this.
-    // }
   },
 };
 </script>

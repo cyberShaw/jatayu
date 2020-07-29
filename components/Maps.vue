@@ -15,7 +15,13 @@
         :position="{lat: location.lat, lng: location.lng}"
         :options="{icon: location === currentLocation ? pins.selected : pins.notSelected}"
         @click="currentLocation = location"
-      ></GMapMarker>
+      >
+        <GMapInfoWindow :options="{maxWidth: 200}">
+          <code>
+            <p @click="openInNewWindow(location.lat, location.lng)">Open location in Google Maps</p>
+          </code>
+        </GMapInfoWindow>
+      </GMapMarker>
     </GMap>
   </div>
 </template>
@@ -24,19 +30,19 @@
 export default {
   name: 'Maps',
   props: {
-    loc: [],
+    loc: Array,
   },
   data() {
     return {
       currentLocation: {
-        lat: parseInt(this.loc[0]),
-        lng: parseInt(this.loc[1]),
+        lat: parseFloat(this.loc[0]),
+        lng: parseFloat(this.loc[1]),
       },
       circleOptions: {},
       locations: [
         {
-          lat: parseInt(this.loc[0]),
-          lng: parseInt(this.loc[1]),
+          lat: parseFloat(this.loc[0]),
+          lng: parseFloat(this.loc[1]),
         },
       ],
       pins: {},
@@ -53,7 +59,13 @@ export default {
     };
   },
   mounted() {
-    console.log(this.loc);
+    // console.log(this.loc);
+  },
+  methods: {
+    openInNewWindow(lat, lng) {
+      let query = 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lng;
+      window.open(query);
+    },
   },
 };
 </script>
