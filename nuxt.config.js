@@ -46,7 +46,6 @@ export default {
    */
   plugins: [
     '@/plugins/medium-zoom.js',
-    {src: '~/plugins/after-each.js', mode: 'client'},
     {
       src: '~/plugins/chart.js',
       mode: 'client',
@@ -68,11 +67,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  script: [
-    {src: 'https://kit.fontawesome.com/145ca0f25f.js'},
-    {src: '~/assets/js/active.js'},
-    {src: 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.2/gsap.min.js'},
-  ],
+  script: [{src: 'https://kit.fontawesome.com/145ca0f25f.js'}, {src: '~/assets/js/active.js'}],
   buildModules: ['@nuxtjs/dotenv'],
   /*
    ** Nuxt.js modules
@@ -84,26 +79,10 @@ export default {
     [
       'nuxt-gmaps',
       {
-        key: 'AIzaSyC9U4sCMhib5oL3laji-Tlb7AJgKrioYEM',
+        key: process.env.GMAPS_API_KEY,
       },
     ],
   ],
-
-  auth: {
-    strategies: {
-      local: {
-        endpoints: {
-          login: {url: '/signin', method: 'post', propertyName: 'data.token'},
-          logout: false,
-          user: {url: '/api/user', method: 'get', propertyName: 'data'},
-        },
-        // tokenRequired: true,
-        tokenType: '',
-        // globalToken: true,
-        // autoFetchUser: true
-      },
-    },
-  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
