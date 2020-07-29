@@ -27,10 +27,11 @@
     <div id="myNav" class="overlay">
       <!-- Overlay content -->
       <div class="overlay-content is-family-secondary">
-        <nuxt-link to="/dash" class="link-inner">Dashboard</nuxt-link>
-        <nuxt-link to="/#features" class="link-inner">Features</nuxt-link>
-        <nuxt-link to="/about" class="link-inner">About</nuxt-link>
-        <nuxt-link to="/#" class="link-inner">Logout</nuxt-link>
+        <nuxt-link to="/" @click="toggleNav" class="link-inner">Home</nuxt-link>
+        <nuxt-link to="/dash" @click="toggleNav" class="link-inner">Dashboard</nuxt-link>
+        <nuxt-link to="/#features" @click="toggleNav" class="link-inner">Features</nuxt-link>
+        <nuxt-link to="/about" @click="toggleNav" class="link-inner">About</nuxt-link>
+        <nuxt-link to="/#" @click="toggleNav" class="link-inner">Logout</nuxt-link>
       </div>
     </div>
     <div class="menu-icon" @click="toggleNav">
