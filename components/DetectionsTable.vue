@@ -43,13 +43,13 @@
           </template>
           {{ props.row.location }}
         </b-table-column>
-        <b-table-column class="image is-square" label="Detected Image" field="progress">
+        <b-table-column class="image is-square" label="Detected Image">
           <template slot="header" slot-scope="{column}">
             <p class="is-family-monospace">{{ column.label }}</p>
           </template>
           <img class="zoom" :src="props.row.rsrc" />
         </b-table-column>
-        <b-table-column label="Time Stamp" searchable sortable>
+        <b-table-column label="Time Stamp" field="time_stamp" searchable sortable>
           <template slot="header" slot-scope="{column}">
             <b-tooltip label="Search with the timestamp using the box!" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
@@ -122,6 +122,8 @@ export default {
       coord: '',
       sortIcon: 'arrow-up',
       sortIconSize: 'is-medium',
+      lats: [],
+      mapData: [],
     };
   },
   computed: {
@@ -136,7 +138,7 @@ export default {
   mounted() {
     console.log(this.dataUrl);
     if (this.dataUrl) {
-      console.log(this.dataUrl);
+      // console.log(this.dataUrl);
       this.isLoading = true;
       this.$axios
         .get(this.dataUrl)
@@ -147,6 +149,23 @@ export default {
               this.paginated = true;
             }
             this.clients = r.data.detections;
+            this.clients.forEach(el => {
+              let val = el['location'];
+              this.lats.push(val);
+            });
+            for (let i = 0; i < this.lats.length; i++) {
+              let res = this.lats[i].split('Lats');
+              this.mapData.push(res);
+              // console.log(res);
+            }
+            let i = 0;
+            this.clients.forEach(el => {
+              el['location'] = this.mapData[i];
+              i = i + 1;
+            });
+            // console.log(this.mapData);
+            // console.log(this.lats);
+            console.log(this.clients);
           }
         })
         .catch(e => {

@@ -36,13 +36,13 @@
           >{{ props.row.id }}</nuxt-link>
         </b-table-column>
         <b-table-column label="Severity" field="severity" sortable centered>{{ props.row.severity }}</b-table-column>
-        <b-table-column class="image is-square" label="Criminal Database Image" field="progress">
+        <b-table-column class="image is-square" label="Criminal Database Image">
           <template slot="header" slot-scope="{column}">
             <p class="is-family-monospace">{{ column.label }}</p>
           </template>
           <img class="zoom" :src="props.row.picture" />
         </b-table-column>
-        <b-table-column label="Gender" searchable sortable>
+        <b-table-column label="Gender" field="gender" searchable sortable>
           <template slot="header" slot-scope="{column}">
             <b-tooltip label="Search with Gender using the box!" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
