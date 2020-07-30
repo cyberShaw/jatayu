@@ -88,6 +88,24 @@ export default {
         key: 'AIzaSyC9U4sCMhib5oL3laji-Tlb7AJgKrioYEM',
       },
     ],
+    ['nuxt-i18n', {
+      locales: [
+        {
+          name: 'Hindi',
+          code: 'hi',
+          iso: 'hi',
+          file: 'hi.js'
+        },
+        {
+          name: 'English',
+          code: 'en',
+          iso: 'en-US',
+          file: 'en-US.js'
+        },
+      ],
+      langDir: 'lang/',
+      defaultLocale: 'it',
+    }]
   ],
 
   auth: {
