@@ -16,7 +16,6 @@
     "@mdi/font": "^5.3.45",
     "@nuxtjs/axios": "^5.12.0",
     "@nuxtjs/firebase": "^6.1.1",
-    "@nuxtjs/pwa": "^3.0.0-beta.20",
     "aos": "^2.3.4",
     "bootstrap-vue": "^2.15.0",
     "bulma": "^0.9.0",
