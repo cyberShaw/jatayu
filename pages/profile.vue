@@ -58,9 +58,14 @@ export default {
   },
   methods: {
     signOut() {
-      this.$store.dispatch('signOut').catch(err => {
-        console.log(err);
-      });
+      this.$store
+        .dispatch('signOut')
+        .then(() => {
+          this.$router.push('/');
+        })
+        .catch(err => {
+          console.log(err);
+        });
     },
   },
 };
