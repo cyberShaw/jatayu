@@ -50,14 +50,10 @@
             <div class="column">
               <h3
                 class="is-size-4 is-size-5-mobile is-color-blue has-text-weight-bold is-family-sans-serif is-capitalized"
-              >
-                Face Recognition
-              </h3>
+              >Face Recognition</h3>
               <p
                 class="is-size-3 is-size-4-mobile is-color-primary has-text-weight-bold is-family-sans-serif"
-              >
-                Say hello to the future.
-              </p>
+              >Say hello to the future.</p>
               <p class="is-size-5 is-size-6-mobile is-color-primary">
                 A face detection layer powered by Retinaface which is robust to positional and
                 resolution changes and can detect faces in an image with great accuracy.
@@ -78,14 +74,10 @@
             <div class="column">
               <h3
                 class="is-size-4 is-size-5-mobile is-color-blue has-text-weight-bold is-family-sans-serif is-capitalized"
-              >
-                Data Mining
-              </h3>
+              >Data Mining</h3>
               <p
                 class="is-size-3 is-size-4-mobile is-color-primary has-text-weight-bold is-family-sans-serif"
-              >
-                Effectively Mining, at a deeper level.
-              </p>
+              >Effectively Mining, at a deeper level.</p>
               <p class="is-size-5 is-size-6-mobile is-color-primary">
                 The internet, especially social media sites are scraped for images of the personnel.
                 Only those images that show more than 85% accuracy are included into our criminal
@@ -101,14 +93,10 @@
             <div class="column">
               <h3
                 class="is-size-4 is-size-5-mobile is-color-blue has-text-weight-bold is-family-sans-serif is-capitalized"
-              >
-                3D Comparsion
-              </h3>
+              >3D Comparsion</h3>
               <p
                 class="is-size-3 is-size-4-mobile is-color-primary has-text-weight-bold is-family-sans-serif"
-              >
-                Increased Accuracy, with face reconstruction.
-              </p>
+              >Increased Accuracy, with face reconstruction.</p>
               <p class="is-size-5 is-size-6-mobile is-color-primary">
                 Being a false positive outcome in the case of tagging criminals is a serious error.
                 Therefore, a 3D map of the face is constructed and compared.
@@ -123,12 +111,10 @@
 
       <section id="cta" class="section">
         <div class="container">
-          <h3 class="is-size-3 has-text-centered has-text-weight-bold">
-            Track and Detect Criminals!
-          </h3>
+          <h3 class="is-size-3 has-text-centered has-text-weight-bold">Track and Detect Criminals!</h3>
           <br />
           <div class="is-flex is-horizontal-centered">
-            <nuxt-link to="/login">
+            <nuxt-link to="/auth/login">
               <button class="button is-large has-text-weight-semibold">Sign In 🔐</button>
             </nuxt-link>
           </div>

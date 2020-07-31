@@ -1,11 +1,11 @@
 <template>
-  <div>
+  <div v-if="isMounted">
     <p class="subtitle">Location of Detection</p>
     <GMap
       ref="gMap"
       language="en"
       :cluster="{options: {styles: clusterStyle}}"
-      :center="{lat: locations[0].lat, lng: locations[0].lng}"
+      :center="{lat: locations[0].lat, lng: locations[1].lng}"
       :options="{fullscreenControl: false, styles: mapStyle}"
       :zoom="6"
     >
@@ -28,23 +28,18 @@
 
 <script>
 export default {
-  name: 'Maps',
+  name: 'ProfileMaps',
   props: {
-    loc: Array,
+    coord: Array,
   },
   data() {
     return {
       currentLocation: {
-        lat: parseFloat(this.loc[0]),
-        lng: parseFloat(this.loc[1]),
+        lat: parseFloat(this.coord[0].lat),
+        lng: parseFloat(this.coord[0].lng),
       },
       circleOptions: {},
-      locations: [
-        {
-          lat: parseFloat(this.loc[0]),
-          lng: parseFloat(this.loc[1]),
-        },
-      ],
+      locations: [],
       pins: {},
       mapStyle: [],
       clusterStyle: [
@@ -56,10 +51,21 @@ export default {
           textColor: '#fff',
         },
       ],
+      isMounted: false,
     };
   },
   mounted() {
-    // console.log(this.loc);
+    for (let i = 0; i < this.coord.length; i++) {
+      let temp = {
+        lat: '',
+        lng: '',
+      };
+      temp.lat = parseFloat(this.coord[i][0]);
+      temp.lng = parseFloat(this.coord[i][1]);
+      this.locations.push(temp);
+    }
+    console.log(this.locations);
+    this.isMounted = true;
   },
   methods: {
     openInNewWindow(lat, lng) {

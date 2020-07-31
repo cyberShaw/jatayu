@@ -30,6 +30,7 @@ export default {
     Navbar,
     ProfileBadge,
   },
+  middleware: 'auth',
   computed: {
     ...mapGetters({
       user: 'user',

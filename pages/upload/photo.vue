@@ -2,9 +2,9 @@
   <div class="page">
     <PageHead title="Photo" subtitle="Upload" />
     <b-message type="is-success" has-icon icon="arrow-circle-up" icon-pack="fas" size="is-medium">
-      <p
-        class="is-family-monospace"
-      >Welcome 👋! Upload the photo you have to verify and add to the sighting database!</p>
+      <p class="is-family-monospace">
+        Welcome! Upload the photo you have to verify and add to the sighting database!
+      </p>
     </b-message>
     <section>
       <div class="columns">
@@ -21,7 +21,7 @@
             <b-upload v-model="file" expanded>
               <a class="button is-link is-fullwidth">
                 <b-icon icon="upload"></b-icon>
-                <span>{{ file.name || "Click to upload"}}</span>
+                <span>{{ file.name || 'Click to upload' }}</span>
               </a>
             </b-upload>
           </b-field>
@@ -39,23 +39,20 @@
           </b-field>
           <div class="tags">
             <span v-for="(file, index) in dropFiles" :key="index" class="tag is-primary">
-              {{file.name}}
-              <button
-                class="delete is-small"
-                type="button"
-                @click="deleteDropFile(index)"
-              ></button>
+              {{ file.name }}
+              <button class="delete is-small" type="button" @click="deleteDropFile(index)"></button>
             </span>
           </div>
           <div class="butn">
             <b-button
-              @click.prevent="uploadPhoto"
+              @click.prevent="getURL"
               type="is-link"
               size="is-medium"
               rounded
               icon-left="cloud-upload-alt"
               icon-pack="fas"
-            >Upload</b-button>
+              >Upload</b-button
+            >
             <b-button
               @click="clearFiles"
               type="is-danger"
@@ -63,24 +60,26 @@
               rounded
               icon-left="trash-alt"
               icon-pack="fas"
-            >Clear File</b-button>
+              >Clear File</b-button
+            >
           </div>
           <br />
           <div>
-            <b-message type="is-success" has-icon v-if="success==1">
-              <p
-                class="is-family-monospace has-text-weight-bold"
-              >Your image has been uploaded successfully. Thank you for contributing to the dataset! 😄</p>
+            <b-message type="is-success" has-icon v-if="success == 1">
+              <p class="is-family-monospace has-text-weight-bold">
+                Your image has been uploaded successfully. Thank you for contributing to the
+                dataset! 😄
+              </p>
               <p>The uploaded file is of size -> {{ size }} MB</p>
               <p>
                 It can be viewed at:
                 <a :href="bucketURL">{{ bucketURL }}</a>
               </p>
             </b-message>
-            <b-message type="is-danger" has-icon v-if="success==2">
-              <p
-                class="is-family-monospace has-text-weight-bold"
-              >There was an error while uploading the file! 🙃</p>
+            <b-message type="is-danger" has-icon v-if="success == 2">
+              <p class="is-family-monospace has-text-weight-bold">
+                There was an error while uploading the file! 🙃
+              </p>
               <p>The error status is: {{ error }}</p>
             </b-message>
           </div>
@@ -110,6 +109,7 @@ export default {
       error: '',
       bucketURL: '',
       size: '',
+      serverURL: '',
     };
   },
   methods: {
@@ -119,7 +119,7 @@ export default {
     deleteDropFile(index) {
       this.dropFiles.splice(index, 1);
     },
-    uploadPhoto() {
+    getURL() {
       // console.log(this.file);
       let fd = new FormData();
       fd.append('video', this.file);
@@ -136,14 +136,37 @@ export default {
           this.success = 1;
           this.bucketURL = res.data.url;
           this.size = Math.round((res.data.size / (1024 * 1024) + Number.EPSILON) * 100) / 100;
+          this.uploadImage();
         })
         .catch(err => {
           this.error = err;
         });
     },
+    uploadImage() {
+      // console.log(this.serverURL + '/image' + '?url=' + this.bucketURL);
+      this.$axios
+        .get(this.serverURL + '/image' + '?url=' + this.bucketURL)
+        .then(res => {
+          console.log(res);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+    },
     clearFiles() {
       this.file = {};
     },
+  },
+  mounted() {
+    this.$axios
+      .get('https://codersofblaviken.blob.core.windows.net/detection/images/url.json')
+      .then(res => {
+        console.log(res.data.url);
+        this.serverURL = res.data.url;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   },
 };
 </script>
