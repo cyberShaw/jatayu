@@ -73,6 +73,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/pwa',
     '@nuxtjs/axios',
     'nuxt-buefy',
     [
@@ -81,6 +82,24 @@ export default {
         key: process.env.GMAPS_API_KEY,
       },
     ],
+    ['nuxt-i18n', {
+      locales: [
+        {
+          name: 'Hindi',
+          code: 'hi',
+          iso: 'hi',
+          file: 'hi.js'
+        },
+        {
+          name: 'English',
+          code: 'en',
+          iso: 'en-US',
+          file: 'en-US.js'
+        },
+      ],
+      langDir: 'lang/',
+      defaultLocale: 'it',
+    }]
   ],
   /*
    ** Axios module configuration
@@ -97,5 +116,13 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {},
+  },
+
+  pwa: {
+    manifest: {
+      name: 'Jatayu | Criminal Detection and Tracking',
+      short_name: 'Jatayu',
+      lang: 'en',
+    },
   },
 };
