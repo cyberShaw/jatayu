@@ -6,7 +6,8 @@
       </header>
       <section class="modal-card-body">
         <p>
-          This will mark detection ID <b>{{ trashObjectName }}</b>
+          This will mark ID
+          <b>{{ trashObjectName }}</b>
           <span v-if="tf">as verified</span>
           <span v-else>as a false positive</span>
         </p>

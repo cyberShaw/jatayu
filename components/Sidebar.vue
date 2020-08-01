@@ -29,6 +29,12 @@
           label="Criminals"
         ></b-menu-item>
         <b-menu-item
+          @click="$router.push('/violence')"
+          icon="bomb"
+          icon-pack="fas"
+          label="Violence"
+        ></b-menu-item>
+        <b-menu-item
           @click="$router.push('/track')"
           icon="search-location"
           icon-pack="fas"
@@ -62,12 +68,7 @@
           icon-pack="fas"
           label="Profile"
         ></b-menu-item>
-        <b-menu-item
-          @click="signOut"
-          icon="sign-out-alt"
-          icon-pack="fas"
-          label="Sign Out"
-        ></b-menu-item>
+        <b-menu-item @click="signOut" icon="sign-out-alt" icon-pack="fas" label="Sign Out"></b-menu-item>
       </b-menu-list>
     </b-menu>
   </div>
