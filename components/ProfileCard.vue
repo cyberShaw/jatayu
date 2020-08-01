@@ -46,7 +46,7 @@
             <!-- <p class="subtitle">With even more content</p> -->
             <div class="content" v-if="isMounted">
               <div v-if="displayMap">
-                <Maps :coord="mapData" />
+                <ProfileMaps :coord="mapData" />
               </div>
             </div>
             <div v-if="!displayMap">
@@ -62,12 +62,12 @@
 </template>
 
 <script>
-import Maps from '@/components/Maps';
+import ProfileMaps from '@/components/ProfileMaps';
 export default {
   name: 'ProfileCard',
   props: ['cid', 'img_rsc', 'name', 'gender', 'severity'],
   components: {
-    Maps,
+    ProfileMaps,
   },
 
   data() {
@@ -92,12 +92,13 @@ export default {
               this.lats.push(val);
             }
           });
+          // console.log(this.lats);
           for (let i = 0; i < this.lats.length; i++) {
             let res = this.lats[i].split('Lats');
             this.mapData.push(res);
             // console.log(res);
           }
-          if (mapData) {
+          if (this.mapData) {
             this.displayMap = true;
           }
           let i = 0;

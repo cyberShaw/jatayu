@@ -59,13 +59,13 @@
             <p>
               <b-icon icon="dots-horizontal" size="is-large" />
             </p>
-            <p>{{ $t('fetchingData') }}</p>
+            <p>fetchingData</p>
           </template>
           <template v-else>
             <p>
               <b-icon icon="emoticon-sad" size="is-large" />
             </p>
-            <p>{{ $t('nothingHere') }}&hellip;</p>
+            <p>nothingHere &hellip;</p>
           </template>
         </div>
       </section>

@@ -1,4 +1,4 @@
 export default {
-    hello: 'Namaskar',
-    fetchingData: 'Namaskar',
-  }
+  hello: 'Namaskar',
+  fetchingData: 'Namaskar',
+};
