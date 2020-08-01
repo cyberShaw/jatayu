@@ -2,9 +2,9 @@
   <div class="page">
     <PageHead title="Photo" subtitle="Upload" />
     <b-message type="is-success" has-icon icon="arrow-circle-up" icon-pack="fas" size="is-medium">
-      <p class="is-family-monospace">
-        Welcome! Upload the photo you have to verify and add to the sighting database!
-      </p>
+      <p
+        class="is-family-monospace"
+      >Welcome! Upload the photo you have to verify and add to the sighting database!</p>
     </b-message>
     <section>
       <div class="columns">
@@ -40,7 +40,11 @@
           <div class="tags">
             <span v-for="(file, index) in dropFiles" :key="index" class="tag is-primary">
               {{ file.name }}
-              <button class="delete is-small" type="button" @click="deleteDropFile(index)"></button>
+              <button
+                class="delete is-small"
+                type="button"
+                @click="deleteDropFile(index)"
+              ></button>
             </span>
           </div>
           <div class="butn">
@@ -51,8 +55,8 @@
               rounded
               icon-left="cloud-upload-alt"
               icon-pack="fas"
-              >Upload</b-button
-            >
+              :uploading="isUploading"
+            >Upload</b-button>
             <b-button
               @click="clearFiles"
               type="is-danger"
@@ -60,16 +64,14 @@
               rounded
               icon-left="trash-alt"
               icon-pack="fas"
-              >Clear File</b-button
-            >
+            >Clear File</b-button>
           </div>
           <br />
           <div>
             <b-message type="is-success" has-icon v-if="success == 1">
-              <p class="is-family-monospace has-text-weight-bold">
-                Your image has been uploaded successfully. Thank you for contributing to the
-                dataset! 😄
-              </p>
+              <p
+                class="is-family-monospace has-text-weight-bold"
+              >Your image has been uploaded successfully. It is now being processed by the Deep Learning Core. Please wait ...</p>
               <p>The uploaded file is of size -> {{ size }} MB</p>
               <p>
                 It can be viewed at:
@@ -77,11 +79,30 @@
               </p>
             </b-message>
             <b-message type="is-danger" has-icon v-if="success == 2">
-              <p class="is-family-monospace has-text-weight-bold">
-                There was an error while uploading the file! 🙃
-              </p>
+              <p
+                class="is-family-monospace has-text-weight-bold"
+              >There was an error while uploading the file! 🙃</p>
               <p>The error status is: {{ error }}</p>
             </b-message>
+            <div class="card">
+              <div class="columns">
+                <div class="column is-9">
+                  <b-message type="is-link">
+                    The image matches the criminal database records! Criminal with ID {{ detectedCid }} has been identified!
+                    Do you want to add this record to the detections list?
+                  </b-message>
+                </div>
+                <div class="column is-3 upload-btn">
+                  <b-button @click="updateDatabase" class="is-link">Upload</b-button>
+                </div>
+              </div>
+            </div>
+
+            <b-message
+              type="is-danger"
+              has-icon
+              v-if="success == 4"
+            >Sorry :(. The uploaded image does not match our criminal database records. Please try another image.</b-message>
           </div>
         </div>
       </div>
@@ -110,7 +131,24 @@ export default {
       bucketURL: '',
       size: '',
       serverURL: '',
+      isUploading: null,
+      showUploadDialog: false,
+      detectedCid: '',
+      currentLocation: '',
     };
+  },
+  computed: {
+    showPosition(position) {
+      this.currentLocation = position.coords.latitude + 'Lats' + position.coords.longitude;
+      console.log(this.currentLocation);
+    },
+    getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.showPosition);
+      } else {
+        x.innerHTML = 'Geolocation is not supported by this browser.';
+      }
+    },
   },
   methods: {
     handleAnimation: function(anim) {
@@ -121,6 +159,7 @@ export default {
     },
     getURL() {
       // console.log(this.file);
+      this.isUploading = true;
       let fd = new FormData();
       fd.append('video', this.file);
       this.$axios({
@@ -147,7 +186,16 @@ export default {
       this.$axios
         .get(this.serverURL + '/image' + '?url=' + this.bucketURL)
         .then(res => {
-          console.log(res);
+          this.isUploading = false;
+          // console.log(res);
+          // console.log(res.data.cid);
+          if (res.data.cid == 'Not in database') {
+            this.success = 4;
+          } else {
+            this.success = 3;
+
+            this.detectedCid = res.data.cid;
+          }
         })
         .catch(err => {
           console.log(err);
@@ -155,6 +203,13 @@ export default {
     },
     clearFiles() {
       this.file = {};
+    },
+    updateDatabase() {
+      this.getLocation();
+      this.$axios.post('https://coders-of-blaviken-api.herokuapp.com/api/detections', {
+        cid: this.detectedCid,
+        // location: this.
+      });
     },
   },
   mounted() {
@@ -186,5 +241,11 @@ div > svg {
   width: 100%;
   left: 0;
   top: 0;
+}
+
+.upload-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 </style>

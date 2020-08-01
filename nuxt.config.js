@@ -82,27 +82,27 @@ export default {
         key: process.env.GMAPS_API_KEY,
       },
     ],
-    [
-      'nuxt-i18n',
-      {
-        locales: [
-          {
-            name: 'Hindi',
-            code: 'hi',
-            iso: 'hi',
-            file: 'hi.js',
-          },
-          {
-            name: 'English',
-            code: 'en',
-            iso: 'en-US',
-            file: 'en-US.js',
-          },
-        ],
-        langDir: 'lang/',
-        defaultLocale: 'it',
-      },
-    ],
+    // [
+    //   'nuxt-i18n',
+    //   {
+    //     locales: [
+    //       {
+    //         name: 'Hindi',
+    //         code: 'hi',
+    //         iso: 'hi',
+    //         file: 'hi.js',
+    //       },
+    //       {
+    //         name: 'English',
+    //         code: 'en',
+    //         iso: 'en-US',
+    //         file: 'en-US.js',
+    //       },
+    //     ],
+    //     langDir: 'lang/',
+    //     defaultLocale: 'it',
+    //   },
+    // ],
   ],
   /*
    ** Axios module configuration

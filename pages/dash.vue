@@ -1,23 +1,23 @@
 <template>
-  <div class="page">
+  <div ref="page" class="page">
     <PageHead title="Watchlist" subtitle="Dashboard" />
     <b-message type="is-success" has-icon icon="user-secret" icon-pack="fas" size="is-medium">
-      <p>Welcome 👋! Track high risk criminals and add criminals to your watchlist!</p>
+      <p>Welcome! Track high risk criminals and add criminals to your watchlist!</p>
+      <p class="is-size-6">Click on the criminal ID to view criminal details</p>
     </b-message>
     <div class="columns">
       <div class="column is-half">
         <p class="title is-size-3">Your Watchlist</p>
         <Card class="has-table">
           <b-table
-            hasMobileCards
             striped
             hoverable
-            default-sort="cid"
+            default-sort="id"
             default-sort-direction="asc"
             :data="watchlist"
           >
             <template slot-scope="props">
-              <b-table-column label="Criminal ID" field="id" searchable sortable centered>
+              <b-table-column label="Criminal ID" field="id" sortable centered>
                 <template slot="header" slot-scope="{column}">
                   <b-tooltip label="Search with the Criminal ID using the box!" dashed>
                     <p class="is-family-monospace">{{ column.label }}</p>
@@ -26,15 +26,8 @@
                 <nuxt-link
                   :to="{name: 'criminal-cid', params: {cid: props.row.id}}"
                   class="button is-small is-link has-text-weight-bold"
-                >{{ props.row.id }}</nuxt-link>
-              </b-table-column>
-              <b-table-column label="Location: Coordinates" field="location" sortable centered>
-                <template slot="header" slot-scope="{column}">
-                  <b-tooltip label="Click on the icon at the left to show map!" dashed>
-                    <p class="is-family-monospace">{{ column.label }}</p>
-                  </b-tooltip>
-                </template>
-                {{ props.row.location }}
+                  >{{ props.row.id }}</nuxt-link
+                >
               </b-table-column>
             </template>
 
@@ -54,15 +47,6 @@
                 </template>
               </div>
             </section>
-            <template slot="detail" slot-scope="props">
-              <article class="media">
-                <div class="media-content">
-                  <div class="content">
-                    <Maps :loc="props.row.location" />
-                  </div>
-                </div>
-              </article>
-            </template>
           </b-table>
         </Card>
       </div>
@@ -80,7 +64,7 @@
             expanded
             v-model="selectedCid"
           >
-            <option v-for="option in criminals" :value="option.id" :key="option.id">{{ option.id }}</option>
+            <option v-for="option in criminals" :value="option" :key="option">{{ option }}</option>
           </b-select>
         </b-field>
         <b-button
@@ -89,7 +73,8 @@
           ref="addToList"
           icon-left="plus-circle"
           icon-pack="fas"
-        >Add to List</b-button>
+          >Add to List</b-button
+        >
       </div>
     </div>
   </div>
@@ -112,14 +97,14 @@ export default {
       email: '',
       cid: null,
       watchlist: [],
-      selectedCid: '',
-      criminals: null,
+      selectedCid: null,
+      criminals: [],
       isLoading: false,
     };
   },
   async mounted() {
     this.email = this.$store.state.user.email;
-    console.log(this.email);
+    // console.log(this.email);
     await fireDb
       .collection(this.email)
       .get()
@@ -128,6 +113,7 @@ export default {
           // console.log(doc.data());
           this.watchlist.push(doc.data());
         });
+        // console.log(this.watchlist);
       })
       .catch(err => {
         console.log(err);
@@ -139,12 +125,13 @@ export default {
       .get('https://coders-of-blaviken-api.herokuapp.com/api/criminals')
       .then(r => {
         this.isLoading = false;
-        this.criminals = r.data.criminals;
+        // this.criminals = r.data.criminals;
         r.data.criminals.forEach(el => {
           if (el.id) {
             this.criminals.push(el.id);
+            // console.log(el.id);
           }
-          // console.log(el.id);
+          // console.log(this.criminals);
         });
       })
       .catch(e => {
@@ -154,18 +141,19 @@ export default {
           type: 'is-danger',
         });
       });
-    console.log(JSON.stringify(this.criminals));
+    // console.log(JSON.stringify(this.criminals));
   },
   methods: {
     addToList() {
-      console.log(toString(this.selectedCid));
+      console.log(this.selectedCid.toString());
       fireDb
         .collection(this.email)
-        .doc(toString(this.selectedCid))
+        .doc(this.selectedCid.toString())
         .set({
           id: this.selectedCid,
         })
         .then(res => {
+          this.forceRerender();
           console.log(res);
         })
         .catch(err => {
