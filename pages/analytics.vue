@@ -141,5 +141,37 @@ export default {
       },
     };
   },
+  mounted() {
+    /* Data points defined as an array of LatLng objects */
+    var heatmapData = [
+      new google.maps.LatLng(23.255404, 77.414452),
+      new google.maps.LatLng(23.255404, 77.414452),
+      new google.maps.LatLng(23.255404, 77.412450),
+      new google.maps.LatLng(23.255404, 77.410448),
+      new google.maps.LatLng(23.255404, 77.408482),
+      new google.maps.LatLng(23.255404, 77.406472),
+      new google.maps.LatLng(23.255404, 77.404462),
+      new google.maps.LatLng(23.258500, 77.504462),
+      new google.maps.LatLng(23.258500, 77.604462),
+      new google.maps.LatLng(23.258500, 77.505462),
+      new google.maps.LatLng(23.258500, 77.506462),
+      new google.maps.LatLng(23.258500, 77.507462),
+      new google.maps.LatLng(23.220500, 77.508462),
+      new google.maps.LatLng(23.220500, 77.409062)
+    ];
+
+    var MadhyaPradesh = new google.maps.LatLng(23.473324, 77.947998);
+
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: MadhyaPradesh,
+      zoom: 5,
+      mapTypeId: 'satellite'
+    });
+
+    var heatmap = new google.maps.visualization.HeatmapLayer({
+      data: heatmapData
+    });
+    heatmap.setMap(map);
+  },
 };
 </script>
