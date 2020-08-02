@@ -3,6 +3,7 @@ const routerBase =
     ? {
         router: {
           base: '/jatayu/',
+          middleware: 'i18n'
         },
       }
     : {};
@@ -11,6 +12,7 @@ export default {
   mode: 'spa',
   generate: {
     fallback: true,
+    routes: ['/', '/about', '/fr', '/fr/about']
   },
   /*
    ** Headers of the page
@@ -52,6 +54,7 @@ export default {
     },
     '@/plugins/firebase.js',
     '@/plugins/fireauth.js',
+    '@/plugins/i18n.js'
   ],
 
   env: {
@@ -119,6 +122,14 @@ export default {
      ** You can extend webpack config here
      */
     extend(config, ctx) {},
+    postcss: {
+      preset: {
+        features: {
+          customProperties: false
+        }
+      }
+    },
+    vendor: ['vue-i18n'] 
   },
 
   pwa: {

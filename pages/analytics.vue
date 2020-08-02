@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <PageHead title="Analytics" subtitle="Dashboard" />
+    <PageHead :title="$t('analy')" :subtitle="$t('dash')" />
     <div>
       <div class="tile is-vertical is-ancestor">
         <div class="tile is-parent">
