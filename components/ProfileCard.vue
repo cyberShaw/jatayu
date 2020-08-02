@@ -98,7 +98,8 @@ export default {
             this.mapData.push(res);
             // console.log(res);
           }
-          if (this.mapData) {
+          // console.log(this.mapData);
+          if (this.mapData.length > 0) {
             this.displayMap = true;
           }
           let i = 0;

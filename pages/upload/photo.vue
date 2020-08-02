@@ -135,20 +135,8 @@ export default {
       showUploadDialog: false,
       detectedCid: '',
       currentLocation: '',
+      currentLoc: '',
     };
-  },
-  computed: {
-    showPosition(position) {
-      this.currentLocation = position.coords.latitude + 'Lats' + position.coords.longitude;
-      console.log(this.currentLocation);
-    },
-    getLocation() {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(this.showPosition);
-      } else {
-        x.innerHTML = 'Geolocation is not supported by this browser.';
-      }
-    },
   },
   methods: {
     handleAnimation: function(anim) {
@@ -205,14 +193,24 @@ export default {
       this.file = {};
     },
     updateDatabase() {
-      this.getLocation();
       this.$axios.post('https://coders-of-blaviken-api.herokuapp.com/api/detections', {
         cid: this.detectedCid,
+        location: this.currentLoc,
+        rsrc: this.bucketURL,
+        // time_stamp:
         // location: this.
       });
     },
   },
   mounted() {
+    // console.log(Date.now());
+    this.currentLocation = navigator.geolocation.getCurrentPosition(pos => {
+      let lat = parseFloat(pos.coords.latitude.toFixed(4));
+      let lng = parseFloat(pos.coords.longitude.toFixed(4));
+      this.currentLoc = lat + 'Lats' + lng;
+      // console.log(this.currentLoc);
+    });
+
     this.$axios
       .get('https://codersofblaviken.blob.core.windows.net/detection/images/url.json')
       .then(res => {

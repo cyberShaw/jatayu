@@ -115,7 +115,7 @@ export default {
           temp.timeStamp = this.clients[i].time_stamp;
           this.locations.push(temp);
         }
-        // this.locations.push({lat: 23.4356, lng: 23.4234, id: 23, cid: 1231});
+        this.locations.push({lat: 23.4356, lng: 23.4234, id: 23, cid: 1231});
 
         // console.log(JSON.stringify(this.locations));
         this.isLoaded = true;
