@@ -37,6 +37,11 @@
     "nuxt-leaflet": "0.0.21",
     "sass-loader": "^8.0.2",
     "vue-chartjs": "^3.5.0",
+<<<<<<< HEAD
+=======
+    "vue-google-heatmap": "^1.0.1",
+    "vue-i18n": "^8.20.0",
+>>>>>>> 2958817abcdbded47f7fb2f4c7c6a5b4c6e5bbc6
     "vue-lottie": "^0.2.1"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <PageHead subtitle="Detect & Track" title="Recents & Tracking" />
+    <PageHead :subtitle="$t('dat')" :title="$t('rat')" />
     <Card class="has-table" title="Recent Criminal Detections" v-if="isLoaded">
       <GMap
         ref="gMap"

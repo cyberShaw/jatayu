@@ -1,13 +1,13 @@
 <template :key="r">
   <div ref="page" class="page">
-    <PageHead title="Watchlist" subtitle="Dashboard" />
+    <PageHead :title="$t('watchlist')" :subtitle="$t('dash')" />
     <b-message type="is-success" has-icon icon="user-secret" icon-pack="fas" size="is-medium">
       <p>Welcome! Track high risk criminals and add criminals to your watchlist!</p>
       <p class="is-size-6">Click on the criminal ID to view criminal details</p>
     </b-message>
     <div class="columns">
       <div class="column is-half">
-        <p class="title is-size-3">Your Watchlist</p>
+        <p class="title is-size-3">{{$t('ywat')}}</p>
         <Card class="has-table">
           <b-table
             striped
