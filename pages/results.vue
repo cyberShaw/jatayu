@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <PageHead title="Results" subtitle="Upload" />
+    <PageHead :title="$t('res')" :subtitle="$t('up')" />
   </div>
 </template>
 

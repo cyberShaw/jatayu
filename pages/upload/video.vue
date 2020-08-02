@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <PageHead title="Video" subtitle="Upload" />
+    <PageHead :title="$t('vid')" :subtitle="$t('up')" />
     <b-message type="is-success" has-icon icon="arrow-circle-up" icon-pack="fas" size="is-medium">
       <p class="is-family-monospace">
         Welcome! Upload the video footage you have to verify and add to the sighting database!

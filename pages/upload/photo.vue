@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <PageHead title="Photo" subtitle="Upload" />
+    <PageHead :title="$t('pho')" :subtitle="$t('up')" />
     <b-message type="is-success" has-icon icon="arrow-circle-up" icon-pack="fas" size="is-medium">
       <p
         class="is-family-monospace"
