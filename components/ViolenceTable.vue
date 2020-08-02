@@ -257,6 +257,9 @@ export default {
             message: 'Successfully marked as ' + this.tf,
             queue: false,
           });
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
         })
         .catch(err => {
           console.log(err);

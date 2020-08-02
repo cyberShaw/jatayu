@@ -1,4 +1,4 @@
-<template>
+<template :key="r">
   <div>
     <modal-box
       :is-active="isModalActive"
@@ -41,8 +41,7 @@
           <nuxt-link
             :to="{name: 'criminal-cid', params: {cid: props.row.cid}}"
             class="button is-small is-link has-text-weight-bold"
-            >{{ props.row.cid }}</nuxt-link
-          >
+          >{{ props.row.cid }}</nuxt-link>
         </b-table-column>
         <b-table-column label="Location: Coordinates" field="location" sortable centered>
           <template slot="header" slot-scope="{column}">
@@ -168,6 +167,7 @@ export default {
       trashID: '',
       trashInfo: '',
       tf: '',
+      r: 0,
     };
   },
   computed: {
@@ -273,6 +273,9 @@ export default {
             message: 'Successfully marked as ' + this.tf,
             queue: false,
           });
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
         })
         .catch(err => {
           console.log(err);
