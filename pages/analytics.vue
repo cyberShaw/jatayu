@@ -51,7 +51,7 @@
           </div>
         </div>
         <div class="tile is-parent">
-          <div class="tile is-child notification is-light is-danger">
+          <div class="tile is-child notification is-light is-danger" v-if="heatMapPoints.length">
             <vue-google-heatmap :points="heatMapPoints"
                       :initial-zoom="5"
                       :map-type="roadmap"
@@ -73,7 +73,7 @@ import Graph from '@/components/Graph';
 import VueGoogleHeatmap from 'vue-google-heatmap';
  
 Vue.use(VueGoogleHeatmap, {
-  apiKey: API_KEY_HERE
+  apiKey: AIzaSyABrJLz5Efe-R7pb8AErTnuVqdkCxjBf7g
 });
 
 export default {
