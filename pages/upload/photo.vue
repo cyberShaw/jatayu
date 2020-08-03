@@ -69,10 +69,18 @@
           <br />
           <div>
             <b-message type="is-success" has-icon v-if="success == 1">
+<<<<<<< HEAD
               <p
                 class="is-family-monospace has-text-weight-bold"
               >{{$t('SuccessfulImageUpload')}}</p>
               <p>{{$t('FileSize') }} -> {{ size }} {{ $t('mb')}}</p>
+=======
+              <p class="is-family-monospace has-text-weight-bold">
+                Your image has been uploaded successfully. It is now being
+                <br />processed by the Deep Learning Core. Please wait ...
+              </p>
+              <p>The uploaded file is of size -> {{ size }} MB</p>
+>>>>>>> cffe8d3ad9a9d0010fb4bafcd14b867757d9762a
               <p>
                 {{$t('CanBeViewedAt')}}:
                 <a :href="bucketURL">{{ bucketURL }}</a>
@@ -86,6 +94,7 @@
             </b-message>
             <div class="card" v-if="success == 3">
               <div class="columns">
+<<<<<<< HEAD
                 <div class="column is-9">
                   <b-message type="is-link">
                     {{ $t('SuccessfulCriminalMatch') }} {{ detectedCid }}
@@ -94,6 +103,12 @@
                 </div>
                 <div class="column is-3 upload-btn">
                   <b-button @click="updateDatabase" class="is-link">{{$t('Upload')}}</b-button>
+=======
+                <div class="column">
+                  <b-message
+                    type="is-link"
+                  >The image matches the criminal database records! Criminal with ID {{ detectedCid }} has been identified!</b-message>
+>>>>>>> cffe8d3ad9a9d0010fb4bafcd14b867757d9762a
                 </div>
               </div>
             </div>
@@ -182,7 +197,7 @@ export default {
           } else {
             this.success = 3;
             this.detectedCid = res.data.cid;
-            // console.log(this.res)
+            console.log(this.res);
           }
         })
         .catch(err => {
