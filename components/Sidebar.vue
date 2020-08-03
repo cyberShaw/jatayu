@@ -1,6 +1,10 @@
 <template>
   <div class="sidebar-container">
     <b-menu activable>
+      <b-menu-list :label="$t('lang') ">
+        <b-menu-item @click="changeLanguage('en')" icon="font" icon-pack="fas" :label="$t('en')"></b-menu-item>
+        <b-menu-item @click="changeLanguage('hi')" icon="om" icon-pack="fas" :label="$t('hi')"></b-menu-item>
+      </b-menu-list>  
       <b-menu-list :label=" $t('dash') ">
         <b-menu-item
           @click="$router.push('/analytics')"
@@ -70,10 +74,6 @@
         ></b-menu-item>
         <b-menu-item @click="signOut" icon="sign-out-alt" icon-pack="fas" :label="$t('signout') "></b-menu-item>
       </b-menu-list>
-      <b-menu-list :label="$t('lang') ">
-        <b-menu-item @click="changeLanguage('en')" icon="font" icon-pack="fas" :label="$t('en')"></b-menu-item>
-        <b-menu-item @click="changeLanguage('hi')" icon="om" icon-pack="fas" :label="$t('hi')"></b-menu-item>
-      </b-menu-list>  
     </b-menu>
   </div>
 </template>
