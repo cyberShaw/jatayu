@@ -69,9 +69,10 @@
           <br />
           <div>
             <b-message type="is-success" has-icon v-if="success == 1">
-              <p
-                class="is-family-monospace has-text-weight-bold"
-              >Your image has been uploaded successfully. It is now being processed by the Deep Learning Core. Please wait ...</p>
+              <p class="is-family-monospace has-text-weight-bold">
+                Your image has been uploaded successfully. It is now being
+                <br />processed by the Deep Learning Core. Please wait ...
+              </p>
               <p>The uploaded file is of size -> {{ size }} MB</p>
               <p>
                 It can be viewed at:
@@ -86,14 +87,10 @@
             </b-message>
             <div class="card" v-if="success == 3">
               <div class="columns">
-                <div class="column is-9">
-                  <b-message type="is-link">
-                    The image matches the criminal database records! Criminal with ID {{ detectedCid }} has been identified!
-                    Do you want to add this record to the detections list?
-                  </b-message>
-                </div>
-                <div class="column is-3 upload-btn">
-                  <b-button @click="updateDatabase" class="is-link">Upload</b-button>
+                <div class="column">
+                  <b-message
+                    type="is-link"
+                  >The image matches the criminal database records! Criminal with ID {{ detectedCid }} has been identified!</b-message>
                 </div>
               </div>
             </div>
@@ -182,7 +179,7 @@ export default {
           } else {
             this.success = 3;
             this.detectedCid = res.data.cid;
-            // console.log(this.res)
+            console.log(this.res);
           }
         })
         .catch(err => {
