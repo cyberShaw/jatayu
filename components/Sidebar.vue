@@ -1,74 +1,78 @@
 <template>
   <div class="sidebar-container">
     <b-menu activable>
-      <b-menu-list label="Dashboard">
+      <b-menu-list :label="$t('lang') ">
+        <b-menu-item @click="changeLanguage('en')" icon="font" icon-pack="fas" :label="$t('en')"></b-menu-item>
+        <b-menu-item @click="changeLanguage('hi')" icon="om" icon-pack="fas" :label="$t('hi')"></b-menu-item>
+      </b-menu-list>  
+      <b-menu-list :label=" $t('dash') ">
         <b-menu-item
           @click="$router.push('/analytics')"
           icon="chart-bar"
           icon-pack="fas"
-          label="Analytics"
+          :label="$t('analy') "
         ></b-menu-item>
         <b-menu-item
           @click="$router.push('/dash')"
           icon="tachometer-alt"
           icon-pack="fas"
-          label="Watchlist"
+          :label=" $t('watchlist') "
         ></b-menu-item>
       </b-menu-list>
-      <b-menu-list label="Detect & Track">
+      <b-menu-list :label="$t('dat') ">
         <b-menu-item
           @click="$router.push('/detections')"
           icon="exclamation-triangle"
           icon-pack="fas"
-          label="Detections"
+          :label="$t('detections') "
         ></b-menu-item>
         <b-menu-item
           @click="$router.push('/criminals')"
           icon="user-ninja"
           icon-pack="fas"
-          label="Criminals"
+          :label="$t('criminals') "
         ></b-menu-item>
         <b-menu-item
           @click="$router.push('/violence')"
           icon="bomb"
           icon-pack="fas"
-          label="Violence"
+          :label="$t('vio') "
         ></b-menu-item>
         <b-menu-item
           @click="$router.push('/track')"
           icon="search-location"
           icon-pack="fas"
-          label="Recents & Tracking"
+          :label="$t('rat') "
         ></b-menu-item>
       </b-menu-list>
-      <b-menu-list label="Upload">
+      <b-menu-list :label="$t('up') ">
         <b-menu-item
           @click="$router.push('/upload/video')"
           icon="video"
           icon-pack="fas"
-          label="Upload a Video"
+          :label="$t('uav') "
         ></b-menu-item>
         <b-menu-item
           @click="$router.push('/upload/photo')"
           icon="images"
           icon-pack="fas"
-          label="Upload a Photo"
+          :label="$t('uap') "
         ></b-menu-item>
         <b-menu-item
           @click="$router.push('/results')"
           icon="poll-h"
           icon-pack="fas"
-          label="Results"
+          :label="$t('res') "
         ></b-menu-item>
       </b-menu-list>
-      <b-menu-list label="Account">
+      <b-menu-list :label="$t('acc') ">
         <b-menu-item
           @click="$router.push('/profile')"
           icon="id-badge"
           icon-pack="fas"
-          label="Profile"
+          :label="$t('pro') "
         ></b-menu-item>
-        <b-menu-item @click="signOut" icon="sign-out-alt" icon-pack="fas" label="Sign Out"></b-menu-item>
+        <b-menu-item @click="signOut" icon="sign-out-alt" icon-pack="fas" :label="$t('signout') "></b-menu-item>
       </b-menu-list>
     </b-menu>
   </div>
@@ -88,6 +92,10 @@ export default {
           console.log(err);
         });
     },
+
+      changeLanguage(lang) {  
+      this.$i18n.locale = lang;
+    }
   },
 };
 </script>

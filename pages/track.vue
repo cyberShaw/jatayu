@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <PageHead subtitle="Detect & Track" title="Recents & Tracking" />
+    <PageHead :subtitle="$t('dat')" :title="$t('rat')" />
     <Card class="has-table" title="Recent Criminal Detections" v-if="isLoaded">
       <GMap
         ref="gMap"
@@ -8,7 +8,7 @@
         :cluster="{options: {styles: clusterStyle}}"
         :center="{lat: locations[0].lat, lng: locations[0].lng}"
         :options="{fullscreenControl: false, styles: mapStyle}"
-        :zoom="6"
+        :zoom="3"
       >
         <GMapMarker
           v-for="location in locations"

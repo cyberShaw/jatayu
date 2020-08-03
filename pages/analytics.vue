@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <PageHead title="Analytics" subtitle="Dashboard" />
+    <PageHead :title="$t('analy')" :subtitle="$t('dash')" />
     <div>
       <div class="tile is-vertical is-ancestor">
         <div class="tile is-parent">
@@ -14,7 +14,9 @@
                   <p class="title is-size-4 is-size-5-mobile">Recent Detections</p>
                   <p
                     class="subtitle is-size-3 is-size-4-mobile is-family-monospace has-text-weight-bold"
-                  >12</p>
+                  >
+                    12
+                  </p>
                 </figure>
               </article>
             </div>
@@ -29,7 +31,9 @@
                   <p class="title is-size-4 is-size-5-mobile">Watchlist</p>
                   <p
                     class="subtitle is-size-4 is-size-5-mobile is-family-monospace has-text-weight-bold"
-                  >3 Criminals Watched</p>
+                  >
+                    3 Criminals Watched
+                  </p>
                 </figure>
               </article>
             </div>
@@ -44,22 +48,17 @@
                   <p class="title is-size-5 is-size-6-mobile">New Criminals in Database</p>
                   <p
                     class="subtitle is-size-3 is-size-4-mobile is-family-monospace has-text-weight-bold"
-                  >4</p>
+                  >
+                    4
+                  </p>
                 </figure>
               </article>
             </div>
           </div>
         </div>
         <div class="tile is-parent">
-          <div class="tile is-child notification is-light is-danger" v-if="heatMapPoints.length">
-            <vue-google-heatmap :points="heatMapPoints"
-                      :initial-zoom="5"
-                      :map-type="roadmap"
-                      :lat="23.473324"
-                      :lan="77.947998"
-                      :width="400"
-                      :height="350" />
-            <!-- <graph :data="barChartData" :options="barChartOptions" :height="200" /> -->
+          <div class="tile is-child notification is-light is-danger">
+            <graph :data="barChartData" :options="barChartOptions" :height="200" />
           </div>
         </div>
       </div>
@@ -70,11 +69,6 @@
 <script>
 import PageHead from '@/components/PageHead';
 import Graph from '@/components/Graph';
-import VueGoogleHeatmap from 'vue-google-heatmap';
- 
-Vue.use(VueGoogleHeatmap, {
-  apiKey: AIzaSyABrJLz5Efe-R7pb8AErTnuVqdkCxjBf7g
-});
 
 export default {
   layout: 'dashboard',
@@ -86,20 +80,20 @@ export default {
   data() {
     return {
       heatMapPoints: [
-        {lat: 23.255404, lng:77.414452},
-        {lat: 23.255404, lng:77.414452},
-        {lat: 23.255404, lng:77.412450},
-        {lat: 23.255404, lng:77.410448},
-        {lat: 23.255404, lng:77.408482},
-        {lat: 23.255404, lng:77.406472},
-        {lat: 23.255404, lng:77.404462},
-        {lat: 23.258500, lng:77.504462},
-        {lat: 23.258500, lng:77.604462},
-        {lat: 23.258500, lng:77.505462},
-        {lat: 23.258500, lng:77.506462},
-        {lat: 23.258500, lng:77.507462},
-        {lat: 23.220500, lng:77.508462},
-        {lat: 23.220500, lng:77.409062}
+        {lat: 23.255404, lng: 77.414452},
+        {lat: 23.255404, lng: 77.414452},
+        {lat: 23.255404, lng: 77.41245},
+        {lat: 23.255404, lng: 77.410448},
+        {lat: 23.255404, lng: 77.408482},
+        {lat: 23.255404, lng: 77.406472},
+        {lat: 23.255404, lng: 77.404462},
+        {lat: 23.2585, lng: 77.504462},
+        {lat: 23.2585, lng: 77.604462},
+        {lat: 23.2585, lng: 77.505462},
+        {lat: 23.2585, lng: 77.506462},
+        {lat: 23.2585, lng: 77.507462},
+        {lat: 23.2205, lng: 77.508462},
+        {lat: 23.2205, lng: 77.409062},
       ],
 
       barChartData: {

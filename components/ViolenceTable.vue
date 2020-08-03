@@ -40,11 +40,14 @@
           </template>
           {{ props.row.location }}
         </b-table-column>
-        <b-table-column label="Detected Image">
+        <b-table-column label="Detected Video">
           <template slot="header" slot-scope="{column}">
             <p class="is-family-monospace">{{ column.label }}</p>
           </template>
-          <video :src="props.row.rsrc" class="zoom" controls />
+          <a :href="props.row.rsrc">
+            <b-button>Open Video</b-button>
+          </a>
+          <!-- <video :src="props.row.rsrc" class="zoom" controls /> -->
         </b-table-column>
         <b-table-column label="Time Stamp" field="time_stamp" searchable sortable>
           <template slot="header" slot-scope="{column}">

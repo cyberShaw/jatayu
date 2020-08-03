@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <PageHead title="Photo" subtitle="Upload" />
+    <PageHead :title="$t('pho')" :subtitle="$t('up')" />
     <b-message type="is-success" has-icon icon="arrow-circle-up" icon-pack="fas" size="is-medium">
       <p
         class="is-family-monospace"
@@ -84,7 +84,7 @@
               >There was an error while uploading the file! 🙃</p>
               <p>The error status is: {{ error }}</p>
             </b-message>
-            <div class="card">
+            <div class="card" v-if="success == 3">
               <div class="columns">
                 <div class="column is-9">
                   <b-message type="is-link">
@@ -175,14 +175,14 @@ export default {
         .get(this.serverURL + '/image' + '?url=' + this.bucketURL)
         .then(res => {
           this.isUploading = false;
-          // console.log(res);
-          // console.log(res.data.cid);
+          console.log(res);
+          console.log(res.data.cid);
           if (res.data.cid == 'Not in database') {
             this.success = 4;
           } else {
             this.success = 3;
-
             this.detectedCid = res.data.cid;
+            // console.log(this.res)
           }
         })
         .catch(err => {

@@ -6,6 +6,8 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       user: '',
+      locales: ['en', 'hi'],
+      locale: 'en'
     },
     getters: {
       user() {
@@ -19,6 +21,11 @@ const createStore = () => {
       setUser(state, payload) {
         state.user = payload;
       },
+      SET_LANG(state, locale) {
+        if (state.locales.indexOf(locale) !== -1) {
+          state.locale = locale
+        }
+      }
     },
     actions: {
       signInWithEmail({commit}, {email, password}) {
