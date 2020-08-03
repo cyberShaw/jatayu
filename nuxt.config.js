@@ -3,7 +3,7 @@ const routerBase =
     ? {
         router: {
           base: '/jatayu/',
-          middleware: 'i18n'
+          middleware: 'i18n',
         },
       }
     : {};
@@ -12,7 +12,7 @@ export default {
   mode: 'spa',
   generate: {
     fallback: true,
-    routes: ['/', '/about', '/fr', '/fr/about']
+    routes: ['/', '/about', '/fr', '/fr/about'],
   },
   /*
    ** Headers of the page
@@ -26,6 +26,10 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || '',
+      },
+      {
+        'http-equiv': 'Content-Security-Policy',
+        content: 'upgrade-insecure-requests',
       },
     ],
     link: [
@@ -54,7 +58,7 @@ export default {
     },
     '@/plugins/firebase.js',
     '@/plugins/fireauth.js',
-    '@/plugins/i18n.js'
+    '@/plugins/i18n.js',
   ],
 
   env: {
@@ -125,11 +129,11 @@ export default {
     postcss: {
       preset: {
         features: {
-          customProperties: false
-        }
-      }
+          customProperties: false,
+        },
+      },
     },
-    vendor: ['vue-i18n'] 
+    vendor: ['vue-i18n'],
   },
 
   pwa: {
