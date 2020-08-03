@@ -24,7 +24,7 @@
       ref="table"
     >
       <template slot-scope="props">
-        <b-table-column label="Violence ID" field="id" searchable sortable>
+        <b-table-column :label="$t('videoId')" field="id" searchable sortable>
           <template slot="header" slot-scope="{column}">
             <b-tooltip label="Search with the detection ID using the box!" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
@@ -32,7 +32,7 @@
           </template>
           {{ props.row.id }}
         </b-table-column>
-        <b-table-column label="Location: Coordinates" field="location" sortable centered>
+        <b-table-column :label="$t('location_coord')" field="location" sortable centered>
           <template slot="header" slot-scope="{column}">
             <b-tooltip label="Click on the icon at the left to show map!" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
@@ -40,16 +40,16 @@
           </template>
           {{ props.row.location }}
         </b-table-column>
-        <b-table-column label="Detected Video">
+        <b-table-column :label="$t('DetectedVideo')">
           <template slot="header" slot-scope="{column}">
             <p class="is-family-monospace">{{ column.label }}</p>
           </template>
           <a :href="props.row.rsrc">
-            <b-button>Open Video</b-button>
+            <b-button>{{$t('openVideo')}}</b-button>
           </a>
           <!-- <video :src="props.row.rsrc" class="zoom" controls /> -->
         </b-table-column>
-        <b-table-column label="Time Stamp" field="time_stamp" searchable sortable>
+        <b-table-column :label="$t('time_stamp')" field="time_stamp" searchable sortable>
           <template slot="header" slot-scope="{column}">
             <b-tooltip label="Search with the timestamp using the box!" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
@@ -58,7 +58,7 @@
           <span class="tag is-link">{{ props.row.time_stamp }}</span>
           <!-- {{ props.row.time_stamp }} -->
         </b-table-column>
-        <b-table-column label="Verified" field="valid" searchable centered sortable>
+        <b-table-column :label="$t('verified')" field="valid" searchable centered sortable>
           <template slot="header" slot-scope="{column}">
             <p class="is-family-monospace">{{ column.label }}</p>
           </template>
@@ -69,7 +69,7 @@
             <b-icon icon="times-circle" pack="fas" size="is-medium" type="is-danger"></b-icon>
           </template>
         </b-table-column>
-        <b-table-column custom-key="action-false" label="Mark as False Positive">
+        <b-table-column custom-key="action-false" :label="$t('markAsFalsePositive')">
           <div
             class="buttons"
             @click.prevent="trashModal(props.row.id, false)"
@@ -78,7 +78,7 @@
             <b-icon type="is-danger" icon="exclamation" pack="fas" size="is-medium" />
           </div>
         </b-table-column>
-        <b-table-column custom-key="actions-true" label="Mark as Verified">
+        <b-table-column custom-key="actions-true" :label="$t('markAsVerified')">
           <div
             class="buttons"
             @click.prevent="trashModal(props.row.id, true)"
@@ -95,13 +95,13 @@
             <p>
               <b-icon icon="dots-horizontal" size="is-large" />
             </p>
-            <p>Fetching data...</p>
+            <p>{{$t('FetchingData')}}</p>
           </template>
           <template v-else>
             <p>
               <b-icon icon="emoticon-sad" size="is-large" />
             </p>
-            <p>Nothing's here&hellip;</p>
+            <p>{{$t('NothingHere')}}&hellip;</p>
           </template>
         </div>
       </section>

@@ -1,7 +1,7 @@
 <template>
   <div class="page">
     <PageHead :subtitle="$t('dat')" :title="$t('rat')" />
-    <Card class="has-table" title="Recent Criminal Detections" v-if="isLoaded">
+    <Card class="has-table" :title="$t('RecentCriminalDetections')" v-if="isLoaded">
       <GMap
         ref="gMap"
         language="en"
@@ -20,11 +20,11 @@
           <GMapInfoWindow :options="{maxWidth: 400}">
             <b-message type="is-danger">
               <p>
-                <span class="title is-family-primary is-size-6">Detection ID:</span>
+                <span class="title is-family-primary is-size-6">{{$t('did'):</span>
                 <span class="subtitle is-family-primary is-size-6">{{ location.id }}</span>
               </p>
               <p>
-                <span class="title is-family-primary is-size-6">Criminal ID:</span>
+                <span class="title is-family-primary is-size-6">{{$t('cid'):</span>
                 <span class="subtitle is-family-primary is-size-6">{{ location.cid }}</span>
               </p>
               <b-button

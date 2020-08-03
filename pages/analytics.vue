@@ -11,7 +11,7 @@
                   <b-icon pack="fas" icon="user-secret" size="is-medium"></b-icon>
                 </figure>
                 <figure class="media-right">
-                  <p class="title is-size-4 is-size-5-mobile">Recent Detections</p>
+                  <p class="title is-size-4 is-size-5-mobile">{{$t('RecentDetections')}}</p>
                   <p
                     class="subtitle is-size-3 is-size-4-mobile is-family-monospace has-text-weight-bold"
                   >
@@ -28,11 +28,11 @@
                   <b-icon pack="fas" icon="stream" size="is-medium"></b-icon>
                 </figure>
                 <figure class="media-right">
-                  <p class="title is-size-4 is-size-5-mobile">Watchlist</p>
+                  <p class="title is-size-4 is-size-5-mobile">{{$t('watchlist')}}</p>
                   <p
                     class="subtitle is-size-4 is-size-5-mobile is-family-monospace has-text-weight-bold"
                   >
-                    3 Criminals Watched
+                    {{$t('CriminalsWatched')}}
                   </p>
                 </figure>
               </article>
@@ -45,7 +45,7 @@
                   <b-icon pack="fas" icon="server" size="is-medium"></b-icon>
                 </figure>
                 <figure class="media-right">
-                  <p class="title is-size-5 is-size-6-mobile">New Criminals in Database</p>
+                  <p class="title is-size-5 is-size-6-mobile">{{$t('NewCriminalInDb')}}</p>
                   <p
                     class="subtitle is-size-3 is-size-4-mobile is-family-monospace has-text-weight-bold"
                   >
