@@ -3,7 +3,7 @@
     <PageHead :title="$t('vid')" :subtitle="$t('up')" />
     <b-message type="is-success" has-icon icon="arrow-circle-up" icon-pack="fas" size="is-medium">
       <p class="is-family-monospace">
-        Welcome! Upload the video footage you have to verify and add to the sighting database!
+        {{$t('UploadVideoToVerifyAndAdd')}}
       </p>
     </b-message>
     <section>
@@ -21,7 +21,7 @@
             <b-upload v-model="file" expanded>
               <a class="button is-link is-fullwidth">
                 <b-icon icon="upload"></b-icon>
-                <span>{{ file.name || 'Click to upload' }}</span>
+                <span>{{ file.name || $t('ClickToUpload') }}</span>
               </a>
             </b-upload>
           </b-field>
@@ -32,7 +32,7 @@
                   <p>
                     <b-icon icon="upload" size="is-large"></b-icon>
                   </p>
-                  <p>Drop your files here or click to upload</p>
+                  <p>{{$t('DropFilesOrClickToUpload')}}</p>
                 </div>
               </section>
             </b-upload>
@@ -51,7 +51,7 @@
               rounded
               icon-left="cloud-upload-alt"
               icon-pack="fas"
-              >Upload</b-button
+              >{{$t('Upload')}}</b-button
             >
             <b-button
               @click="clearFiles"
@@ -60,27 +60,26 @@
               rounded
               icon-left="trash-alt"
               icon-pack="fas"
-              >Clear File</b-button
+              >{{$t('ClearFile')}}</b-button
             >
           </div>
           <br />
           <div>
             <b-message type="is-success" has-icon v-if="success == 1">
               <p class="is-family-monospace has-text-weight-bold">
-                Your video has been uploaded successfully. Thank you for contributing to the
-                dataset! 😄
+                {{$t('SuccessfulVideoUpload')}} 😄
               </p>
-              <p>The uploaded file is of size -> {{ size }} MB</p>
+              <p>{{$t('FileSize')}} -> {{ size }} {{$t('mb')}}</p>
               <p>
-                It can be viewed at:
+                {{$t('CanBeViewedAt')}}:
                 <a :href="bucketURL">{{ bucketURL }}</a>
               </p>
             </b-message>
             <b-message type="is-danger" has-icon v-if="success == 2">
               <p class="is-family-monospace has-text-weight-bold">
-                There was an error while uploading the file! 🙃
+                {{$t('UploadError')}} 🙃
               </p>
-              <p>The error status is: {{ error }}</p>
+              <p>{{$t('ErrorStatus')}}: {{ error }}</p>
             </b-message>
           </div>
         </div>

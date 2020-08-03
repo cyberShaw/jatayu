@@ -1,6 +1,6 @@
 <template>
   <div class="page">
-    <PageHead subtitle="Track & Detect" title="Criminal Profile" />
+    <PageHead subtitle="$t('TrackAndDetect')" title="$t('CriminalProfile')" />
     <ProfileCard
       v-if="criminals"
       :cid="$route.params.cid"

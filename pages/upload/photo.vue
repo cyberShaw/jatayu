@@ -4,7 +4,7 @@
     <b-message type="is-success" has-icon icon="arrow-circle-up" icon-pack="fas" size="is-medium">
       <p
         class="is-family-monospace"
-      >Welcome! Upload the photo you have to verify and add to the sighting database!</p>
+      >{{$t('UploadPicToVerifyAndAdd')}}</p>
     </b-message>
     <section>
       <div class="columns">
@@ -21,7 +21,7 @@
             <b-upload v-model="file" expanded>
               <a class="button is-link is-fullwidth">
                 <b-icon icon="upload"></b-icon>
-                <span>{{ file.name || 'Click to upload' }}</span>
+                <span>{{ file.name || $t('ClickToUpload') }}</span>
               </a>
             </b-upload>
           </b-field>
@@ -32,7 +32,7 @@
                   <p>
                     <b-icon icon="upload" size="is-large"></b-icon>
                   </p>
-                  <p>Drop your files here or click to upload</p>
+                  <p>{{$t('DropFilesOrClickToUpload')}}</p>
                 </div>
               </section>
             </b-upload>
@@ -56,7 +56,7 @@
               icon-left="cloud-upload-alt"
               icon-pack="fas"
               :uploading="isUploading"
-            >Upload</b-button>
+            >{{$t('Upload')}}</b-button>
             <b-button
               @click="clearFiles"
               type="is-danger"
@@ -64,33 +64,51 @@
               rounded
               icon-left="trash-alt"
               icon-pack="fas"
-            >Clear File</b-button>
+            >{{$t('ClearFile')}}</b-button>
           </div>
           <br />
           <div>
             <b-message type="is-success" has-icon v-if="success == 1">
+<<<<<<< HEAD
+              <p
+                class="is-family-monospace has-text-weight-bold"
+              >{{$t('SuccessfulImageUpload')}}</p>
+              <p>{{$t('FileSize') }} -> {{ size }} {{ $t('mb')}}</p>
+=======
               <p class="is-family-monospace has-text-weight-bold">
                 Your image has been uploaded successfully. It is now being
                 <br />processed by the Deep Learning Core. Please wait ...
               </p>
               <p>The uploaded file is of size -> {{ size }} MB</p>
+>>>>>>> cffe8d3ad9a9d0010fb4bafcd14b867757d9762a
               <p>
-                It can be viewed at:
+                {{$t('CanBeViewedAt')}}:
                 <a :href="bucketURL">{{ bucketURL }}</a>
               </p>
             </b-message>
             <b-message type="is-danger" has-icon v-if="success == 2">
               <p
                 class="is-family-monospace has-text-weight-bold"
-              >There was an error while uploading the file! 🙃</p>
-              <p>The error status is: {{ error }}</p>
+              >{{$t('UploadError') }}🙃</p>
+              <p>{{$t('ErrorStatus')}} : {{ error }}</p>
             </b-message>
             <div class="card" v-if="success == 3">
               <div class="columns">
+<<<<<<< HEAD
+                <div class="column is-9">
+                  <b-message type="is-link">
+                    {{ $t('SuccessfulCriminalMatch') }} {{ detectedCid }}
+                    {{ $t('AddToDetections') }}
+                  </b-message>
+                </div>
+                <div class="column is-3 upload-btn">
+                  <b-button @click="updateDatabase" class="is-link">{{$t('Upload')}}</b-button>
+=======
                 <div class="column">
                   <b-message
                     type="is-link"
                   >The image matches the criminal database records! Criminal with ID {{ detectedCid }} has been identified!</b-message>
+>>>>>>> cffe8d3ad9a9d0010fb4bafcd14b867757d9762a
                 </div>
               </div>
             </div>
@@ -99,7 +117,7 @@
               type="is-danger"
               has-icon
               v-if="success == 4"
-            >Sorry :(. The uploaded image does not match our criminal database records. Please try another image.</b-message>
+            >{{ $t('UnsuccessfulCriminalMatch') }}</b-message>
           </div>
         </div>
       </div>

@@ -12,28 +12,28 @@
           <h1 class="is-size-1 is-family-secondary"></h1>
           <div class="content is-size-5 is-family-monospace">
             <div class="media">
-              <div class="media-left has-text-weight-bold">💂 Name:</div>
-              <div class="media-content">Administrator</div>
+              <div class="media-left has-text-weight-bold">💂 $t('Name')}}</div>
+              <div class="media-content">{{$t('Administrator')}}</div>
             </div>
             <div class="media">
-              <div class="media-left has-text-weight-bold">📧 Email:</div>
+              <div class="media-left has-text-weight-bold">📧 $t('Email')}}</div>
               <div class="media-content">{{ $store.state.user.email }}</div>
             </div>
             <div class="media">
-              <div class="media-left has-text-weight-bold">🆔 User ID:</div>
+              <div class="media-left has-text-weight-bold">🆔 $t('Uid')}}</div>
               <div class="media-content">#420</div>
             </div>
             <div class="media">
-              <div class="media-left has-text-weight-bold">📍 Zone:</div>
-              <div class="media-content">South Zone</div>
+              <div class="media-left has-text-weight-bold">📍 $t('zone')}}</div>
+              <div class="media-content">{{$t('SouthZone')}}</div>
             </div>
             <div class="media">
-              <div class="media-left has-text-weight-bold">🏙️ City:</div>
+              <div class="media-left has-text-weight-bold">🏙️ $t('city')}}</div>
               <div class="media-content">Coimbatore</div>
             </div>
             <div class="media">
               <b-button @click="signOut" type="is-link" size="is-medium" class="is-fullwidth">
-                <p class="has-text-weight-bold">Sign Out</p>
+                <p class="has-text-weight-bold">{{$t('SignOut')}}</p>
               </b-button>
             </div>
           </div>

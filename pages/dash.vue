@@ -2,8 +2,8 @@
   <div ref="page" class="page">
     <PageHead :title="$t('watchlist')" :subtitle="$t('dash')" />
     <b-message type="is-success" has-icon icon="user-secret" icon-pack="fas" size="is-medium">
-      <p>Welcome! Track high risk criminals and add criminals to your watchlist!</p>
-      <p class="is-size-6">Click on the criminal ID to view criminal details</p>
+      <p>{{$t('trackAndAddCriminalToWatchlist')}}</p>
+      <p class="is-size-6">{{$t('ClickForCriminalDetails')}}</p>
     </b-message>
     <div class="columns">
       <div class="column is-half">
@@ -17,9 +17,9 @@
             :data="watchlist"
           >
             <template slot-scope="props">
-              <b-table-column label="Criminal ID" field="id" sortable centered>
+              <b-table-column :label="$t('cid')" field="id" sortable centered>
                 <template slot="header" slot-scope="{column}">
-                  <b-tooltip label="Search with the Criminal ID using the box!" dashed>
+                  <b-tooltip :label="$t('SearchCIDUsingBox')" dashed>
                     <p class="is-family-monospace">{{ column.label }}</p>
                   </b-tooltip>
                 </template>
@@ -36,13 +36,13 @@
                   <p>
                     <b-icon icon="dots-horizontal" size="is-large" />
                   </p>
-                  <p>Fetching data...</p>
+                  <p>{{$t('FetchingData')}}</p>
                 </template>
                 <template v-else>
                   <p>
                     <b-icon icon="emoticon-sad" size="is-large" />
                   </p>
-                  <p>Nothing's here&hellip;</p>
+                  <p>{{$t('NothingHere')&hellip;</p>
                 </template>
               </div>
             </section>
@@ -50,13 +50,13 @@
         </Card>
       </div>
       <div class="column is-half has-text-centered">
-        <p class="title is-size-3">Add a Criminal to Watchlist</p>
+        <p class="title is-size-3">{{$t('AddCriminalToWatchlist')}}</p>
         <b-message type="is-link" has-icon icon="map-marker-alt" icon-pack="fas" size="is-medium">
-          <p>Add a criminal ID here to add to watchlist!</p>
+          <p>{{$t('AddCriminalIdToWatchlist')}}</p>
         </b-message>
-        <b-field label="Criminal ID">
+        <b-field :label="$t('cid')">
           <b-select
-            placeholder="Select a Criminal ID"
+            :placeholder="$t('SelectCID')"
             icon="id-badge"
             size="is-medium"
             icon-pack="fas"
@@ -72,7 +72,7 @@
           ref="addToList"
           icon-left="plus-circle"
           icon-pack="fas"
-        >Add to List</b-button>
+        >{{$t('AddToList')}}</b-button>
       </div>
     </div>
   </div>

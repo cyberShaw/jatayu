@@ -16,7 +16,7 @@
       :data="clients"
     >
       <template slot-scope="props">
-        <b-table-column label="Criminal Name" field="name" searchable sortable>
+        <b-table-column :label="$t('CriminalName')" field="name" searchable sortable>
           <template slot="header" slot-scope="{column}">
             <b-tooltip label="Search using the Criminal Name" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
@@ -24,7 +24,7 @@
           </template>
           {{ props.row.name }}
         </b-table-column>
-        <b-table-column label="Criminal ID" field="id" searchable sortable>
+        <b-table-column :label="$t('cid')" field="id" searchable sortable>
           <template slot="header" slot-scope="{column}">
             <b-tooltip label="Search with the Criminal ID using the box!" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
@@ -35,14 +35,14 @@
             class="button is-small is-link has-text-weight-bold"
           >{{ props.row.id }}</nuxt-link>
         </b-table-column>
-        <b-table-column label="Severity" field="severity" sortable centered>{{ props.row.severity }}</b-table-column>
-        <b-table-column class="image is-square" label="Criminal Database Image">
+        <b-table-column :label="$t('Severity')" field="severity" sortable centered>{{ props.row.severity }}</b-table-column>
+        <b-table-column class="image is-square" :label="$t('CriminalDatabaseImage')">
           <template slot="header" slot-scope="{column}">
             <p class="is-family-monospace">{{ column.label }}</p>
           </template>
           <img class="zoom" :src="props.row.picture" />
         </b-table-column>
-        <b-table-column label="Gender" field="gender" searchable sortable>
+        <b-table-column :label="$t('Gender')" field="gender" searchable sortable>
           <template slot="header" slot-scope="{column}">
             <b-tooltip label="Search with Gender using the box!" dashed>
               <p class="is-family-monospace">{{ column.label }}</p>
@@ -59,13 +59,13 @@
             <p>
               <b-icon icon="dots-horizontal" size="is-large" />
             </p>
-            <p>fetchingData</p>
+            <p>{{$t('FetchingData')}}</p>
           </template>
           <template v-else>
             <p>
               <b-icon icon="emoticon-sad" size="is-large" />
             </p>
-            <p>nothingHere &hellip;</p>
+            <p>{{$t('NothingHere')}} &hellip;</p>
           </template>
         </div>
       </section>
