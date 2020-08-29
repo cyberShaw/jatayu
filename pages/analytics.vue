@@ -14,9 +14,7 @@
                   <p class="title is-size-4 is-size-5-mobile">Recent Detections</p>
                   <p
                     class="subtitle is-size-3 is-size-4-mobile is-family-monospace has-text-weight-bold"
-                  >
-                    12
-                  </p>
+                  >12</p>
                 </figure>
               </article>
             </div>
@@ -31,9 +29,7 @@
                   <p class="title is-size-4 is-size-5-mobile">Watchlist</p>
                   <p
                     class="subtitle is-size-4 is-size-5-mobile is-family-monospace has-text-weight-bold"
-                  >
-                    3 Criminals Watched
-                  </p>
+                  >3 Criminals Watched</p>
                 </figure>
               </article>
             </div>
@@ -48,9 +44,7 @@
                   <p class="title is-size-5 is-size-6-mobile">New Criminals in Database</p>
                   <p
                     class="subtitle is-size-3 is-size-4-mobile is-family-monospace has-text-weight-bold"
-                  >
-                    4
-                  </p>
+                  >4</p>
                 </figure>
               </article>
             </div>
@@ -165,37 +159,5 @@ export default {
       },
     };
   },
-  // mounted() {
-  //   /* Data points defined as an array of LatLng objects */
-  //   var heatmapData = [
-  //     new google.maps.LatLng(23.255404, 77.414452),
-  //     new google.maps.LatLng(23.255404, 77.414452),
-  //     new google.maps.LatLng(23.255404, 77.412450),
-  //     new google.maps.LatLng(23.255404, 77.410448),
-  //     new google.maps.LatLng(23.255404, 77.408482),
-  //     new google.maps.LatLng(23.255404, 77.406472),
-  //     new google.maps.LatLng(23.255404, 77.404462),
-  //     new google.maps.LatLng(23.258500, 77.504462),
-  //     new google.maps.LatLng(23.258500, 77.604462),
-  //     new google.maps.LatLng(23.258500, 77.505462),
-  //     new google.maps.LatLng(23.258500, 77.506462),
-  //     new google.maps.LatLng(23.258500, 77.507462),
-  //     new google.maps.LatLng(23.220500, 77.508462),
-  //     new google.maps.LatLng(23.220500, 77.409062)
-  //   ];
-
-  //   var MadhyaPradesh = new google.maps.LatLng(23.473324, 77.947998);
-
-  //   map = new google.maps.Map(document.getElementById('map'), {
-  //     center: MadhyaPradesh,
-  //     zoom: 5,
-  //     mapTypeId: 'satellite'
-  //   });
-
-  //   var heatmap = new google.maps.visualization.HeatmapLayer({
-  //     data: heatmapData
-  //   });
-  //   heatmap.setMap(map);
-  // },
 };
 </script>
